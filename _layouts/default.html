@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.description | escape }}">
+  <meta name="author" content="{{ site.author | escape }}"> 
+
+  <title>{{ page.title }} | {{ site.title }}</title>
+
+  <link rel="stylesheet" href="{{ '/assets/css/variables.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/buttons.css' | relative_url }}">
+
+</head>
+<body>
+  {% include header.html %}
+
+  <main>
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+<button id="scrollToTopBtn" title="Go to top">↑</button>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

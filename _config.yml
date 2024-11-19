@@ -1,0 +1,16 @@
+title: R. Pasolari
+email: r.pasolari@gmail.com
+description: >-
+   This is my personal website
+baseurl: ""
+url: "rpasolari@github.io"
+
+menu:
+  - title: "Home"
+    url: /
+  - title: "About Me"
+    url: /pages/about/
+  - title: "Publications"
+    url: /pages/publications/
+  - title: "Projects"
+    url: /pages/projects/ 

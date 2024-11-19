@@ -1,0 +1,86 @@
+---
+layout: default
+title: Home
+---
+
+<head>
+  <style>
+    /* Hero Section with Background Image */
+    .hero-section {
+      background-image: url('{{ "/assets/images/fields_aoa=25.png" | relative_url }}');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .content-overlay {
+      text-align: center;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.6); /* Overlay for better text visibility */
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .hero-section h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-section .btn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .hero-section .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Introduction Section */
+    .intro {
+      padding: 50px 20px;
+      background-color: #f8f9fa;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+
+<!-- Hero Section -->
+<div class="hero-section">
+  <div class="content-overlay">
+    <h1>Welcome to My Website</h1>
+    <p>Explore my projects, publications, and more!</p>
+    <a href="/about" class="btn">Learn More</a>
+  </div>
+</div>
+
+<!-- Introduction Section -->
+<section class="intro">
+  <h2>About This Website</h2>
+  <p>This is where I share my work and research. Explore the sections to know more about me and my projects.</p>
+</section>

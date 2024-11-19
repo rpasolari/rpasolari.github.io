@@ -1,0 +1,13 @@
+<header>
+  <a href="/" class="name-and-title">
+    <span class="name">Rention Pasolari</span>
+    <span class="title">CFD Methodologist</span>
+  </a>
+  <nav class="menu">
+    <ul>
+      {% for item in site.menu %}
+        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>

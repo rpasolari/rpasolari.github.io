@@ -1,0 +1,37 @@
+/* Colors */
+:root {
+  --header-background: #2d2d2d;
+  --header-text-color: #f5f5f5;
+  --footer-background: #2d2d2d;
+  --footer-text-color: #f5f5f5;
+  --text-color: #333;
+  --heading1-color: #007bff;
+  --heading2-color: #007bff;
+  --button-color: #007bff;
+  --primary-color: #007bff; /* Primary blue */
+  --secondary-color: #6c757d; /* Secondary gray */
+  --background-color: #f8f9fa; /* Light background */
+
+  --header-color: #ff6b6b; /* Header or accent color */
+  --accent-color: #ffca28; /* Highlight color */
+}
+
+/* Fonts */
+:root {
+  --header-font: 'Georgia', serif;
+  --footer-font: 'Georgia', serif;
+  --body-font: 'Arial', sans-serif;
+  --heading-font: 'Georgia', serif;
+  --monospace-font: 'Courier New', monospace;
+}
+
+:root {
+  --header-menu-font-size: 0.9rem;
+  --header-name-font-size: 1.1rem;
+  --header-title-font-size: 0.9rem;
+  --footer-copyright-font-size: 0.8rem;
+  --body-font-size: 1.0rem;
+  --heading1-font-size: 1.9rem;
+  --heading2-font-size: 1.5rem;
+  --heading3-font-size: 1.3rem;
+}
