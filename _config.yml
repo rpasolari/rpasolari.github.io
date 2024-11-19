@@ -9,7 +9,7 @@ menu:
   - title: "Home"
     url: /
   - title: "About Me"
-    url: /about/
+    url: /pages/about/
   - title: "Publications"
     url: /pages/publications/
   - title: "Projects"
