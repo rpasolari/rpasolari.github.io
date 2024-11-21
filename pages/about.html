@@ -1,102 +1,325 @@
 ---
 layout: default
-title: "About Me"
+title: "About"
 permalink: /pages/about/
 ---
+<style>
+    .listing-item {
+        margin-bottom: 30px;
+        padding-left: 20px;
+    }
+
+    .listing-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        border-left: 6px solid var(--secondary-color);
+        position: relative; 
+        padding-left: 10px;
+    }
+
+    .listing-title {
+        font-size: var(--heading3-font-size);
+        font-weight: bold;
+    }
+
+    .listing-date {
+        font-size: 1.1em;
+        font-weight: normal;
+    }
+
+    .listing-details div {
+        margin-bottom: 5px;
+    }
+
+    .university {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+
+    .faculty {
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+    .department, .sector {
+        font-size: 1em;
+        font-weight: normal;
+    }
+
+    .dissertation-section ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .dissertation-section ul li {
+        margin-bottom: 8px;
+    }
+
+    .dissertation-title {
+        font-style: italic;
+    }
+
+    .status {
+        font-weight: bold;
+        color: var(--helper-green-color);
+    }
+
+    .grade {
+        font-weight: bold;
+    }
+
+		.distinction {
+		    font-style: italic; /* Makes the text italic */
+		    font-weight: normal; /* Ensures normal font weight */
+		}
+
+    .listing-item::before {
+        content: ""; 
+        position: absolute;
+        top: 0;
+        left: -10px; 
+        width: 8px; 
+        height: 100%; 
+        background-color: #0056b3;
+    }
+
+</style>
+
 
 <div class="content-container">
 	<section>
-		<h1> About Me </h1>
-		<p>Welcome to my personl website!</p>
+		<h1> About </h1>
+				<p>Here is going to be a large paragraph. Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.Here is going to be a large paragraph.</p>
 	</section>
 	
 	<section>
-		<h2>Education</h2>
-		<ul>
-			<li>Ph.D. in Aerospace Engineering *(October 2020 – Present)*
-**Delft University of Technology (TU Delft)**, Delft, The Netherlands
-
-  Flow Physics and Technology Department
-
-  Wind Energy Sector   
-- Dissertation Title: *VPMFoam: A 2D Incompressible Hybrid Eulerian-Lagrangian Solver for External Aerodynamics*  
-- Status: Awaiting Defense  </li>
-			<li>M.Sc. in Power Systems *(September 2019 – August 2020)*
-**University of Patras (UPatras)**, Patras, Greece
-
- Department of Mechanical and Aeronautics Engineering 
-
- Energy Sector 
-- Grade: **10.0/10.0** (Summa Cum Laude)
-- Thesis Title: *Two fluid model for cold, low-pressure hydrogen plasma*  </li>
-			<li>Integrated Master’s in Mechanical Engineering *(October 2014 – July 2019)*   
-**University of Patras (UPatras)**, Patras, Greece
-
- Department of Mechanical and Aeronautics Engineering 
-
- Energy Sector 
-- Grade: **9.34/10.0** (Summa Cum Laude)
-- Thesis Title: *Numerical simulation of air flow and thermal effects in plasma reactors, used for sewage sludge treatment*</li>
-		</ul>
+    <h2 onclick="toggleSection(this)" style="cursor: pointer;">
+    	Education <span class="arrow">></span>
+		</h2>
+    <div class="collapsible-content" style="display: none;">
+        <div class="listing-item">
+            <div class="listing-header">
+                <span class="listing-title">PhD in Aerospace Engineering</span>
+                <span class="listing-date">2020-2024</span>
+            </div>
+            <div class="listing-details">
+                <div class="university">Delft University of Technology (TU Delft), Delft, The Netherlands</div>
+                <div class="faculty">Faculty of Aerospace Engineering</div>
+                <div class="department">Flow Physics and Technology Department</div>
+                <div class="sector">Wind Energy Sector</div>
+            </div>
+            <div class="dissertation-section">
+                <ul>
+                    <li>- Dissertation Title: <span class="dissertation-title">VPMFoam: A 2D Incompressible Hybrid Eulerian-Lagrangian Solver for External Aerodynamics</span></li>
+                    <li>- Status: <span class="status">Awaiting Defense</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="listing-item">
+            <div class="listing-header">
+                <span class="listing-title">MSc in Power Systems</span>
+                <span class="listing-date">2019-2020</span>
+            </div>
+            <div class="listing-details">
+                <div class="university">University of Patras (UPatras), Patras, Greece</div>
+                <div class="faculty">Polytechnic school</div>
+                <div class="department">Department of Mechanical Engineering and Aeronautics</div>
+                <div class="sector">Energy Sector</div>
+            </div>
+            <div class="dissertation-section">
+                <ul>
+                    <li>- Thesis Title: <span class="dissertation-title">Two fluid model for cold, low-pressure hydrogen plasma</span></li>
+                    <li>- Grade: <span class="grade">10.0/10.0 <span class="distinction">(*Summa Cum Laude*)</span></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="listing-item">
+            <div class="listing-header">
+                <span class="listing-title">MEng in Mechanical Engineering</span>
+                <span class="listing-date">2014-2019</span>
+            </div>
+            <div class="listing-details">
+                <div class="university">University of Patras (UPatras), Patras, Greece</div>
+                <div class="faculty">Polytechnic school</div>
+                <div class="department">Department of Mechanical Engineering and Aeronautics</div>
+                <div class="sector">Energy Sector</div>
+            </div>
+            <div class="dissertation-section">
+                <ul>
+                    <li>- Thesis Title: <span class="dissertation-title">Numerical simulation of air flow and thermal effects in plasma reactors, used for sewage sludge treatment</span></li>
+                    <li>- Grade: <span class="grade">9.34/10.0 <span class="distinction">(*Summa Cum Laude*)</span></span></li>
+                </ul>
+            </div>
+        </div>
+      </div>
 	</section>
 
 	<section>
-		<h2>Professional Experience</h2>
-		<ul>
-			<li>Ph.D. in Aerospace Engineering *(October 2020 – Present)*
-**Delft University of Technology (TU Delft)**, Delft, The Netherlands
-
-  Flow Physics and Technology Department
-
-  Wind Energy Sector   
-- Dissertation Title: *VPMFoam: A 2D Incompressible Hybrid Eulerian-Lagrangian Solver for External Aerodynamics*  
-- Status: Awaiting Defense</li>
-		</ul>
+    <h2 onclick="toggleSection(this)" style="cursor: pointer;">
+    	Professional Experience <span class="arrow">></span>
+		</h2>
+    <div class="collapsible-content" style="display: none;">
+          <div class="listing-item">
+              <div class="listing-header">
+                  <span class="listing-title">PhD in Aerospace Engineering</span>
+                  <span class="listing-date">2020-2024</span>
+              </div>
+              <div class="listing-details">
+                  <div class="university">Delft University of Technology (TU Delft), Delft, The Netherlands</div>
+                  <div class="faculty">Faculty of Aerospace Engineering</div>
+                  <div class="department">Flow Physics and Technology Department</div>
+                  <div class="sector">Wind Energy Sector</div>
+              </div>
+              <div class="dissertation-section">
+                  <ul>
+                      <li>- Dissertation Title: <span class="dissertation-title">VPMFoam: A 2D Incompressible Hybrid Eulerian-Lagrangian Solver for External Aerodynamics</span></li>
+                      <li>- Status: <span class="status">Awaiting Defense</span></li>
+                  </ul>
+              </div>
+          </div>
+        </div>
 	</section>
 
+<style>
+    .bullet-listing {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    .bullet-item {
+        margin-bottom: 15px;
+    }
+
+    .bullet-title {
+        font-weight: bold;
+        font-size: 1.2em; 
+        color: var(--primary-color); 
+    }
+
+    .bullet-provider,
+    .bullet-date {
+        font-size: 1em;
+        color: var(--secondary-color)
+        margin-top: 3px;
+    }
+
+    .bullet-description {
+        font-size: 0.95em;
+        margin-top: 5px;
+        font-style: italic;
+    }
+</style>
+
 	<section>
-		<h2>Certificates</h2>
-		<ul>
-			<li>Essential and Applied CFD 
-  **Provider**: CFD Direct Limited 
-
-  **Date**: October 2023 
-
-  Description: Gained expertise in parallel computing techniques using Python libraries such as CUDA, OpenMP, and Numba.</li>
-			<li>Programming CFD
-  **Provider**: CFD Direct Limited 
-  **Date**: November 2023
-
-  Description: Gained expertise in parallel computing techniques using Python libraries such as CUDA, OpenMP, and Numba.</li>
-			<li>Programming using GPU CUDA
-  **Provider**: DCSE TU Delft
-  **Date**: November 2023 
-  Description: Gained expertise in parallel computing techniques using Python libraries such as CUDA, OpenMP, and Numba.</li>
-			<li>Programming using MPI 
-  **Provider**: CFD Direct Limited 
-  **Date**: DCSE TU Delft 
-  Description: Gained expertise in parallel computing techniques using Python libraries such as CUDA, OpenMP, and Numba.</li>
-			<li>OpenFOAM General Programming Course
-  **Provider**: Von Karman Institute (VKI)
-  **Date**: November 2023 
-  Description: Gained expertise in parallel computing techniques using Python libraries such as CUDA, OpenMP, and Numba.</li>
-			<li>Turbulence Course
-  **Provider**: J.M. Burgerscentrum School for Fluid Mechanics
-  **Date**: November 2023 
-  Description: Gained expertise in parallel computing techniques using Python libraries such as CUDA, OpenMP, and Numba.</li>			
-		</ul>
+    <h2 onclick="toggleSection(this)" style="cursor: pointer;">
+    	Certifications <span class="arrow">></span>
+		</h2>
+    <div class="collapsible-content" style="display: none;">
+			<ul class="bullet-listing">
+        <li class="bullet-item">
+            <span class="bullet-title">Essential and Applied CFD </span><br>
+            <span class="bullet-provider">Provider: CFD Direct Limited </span><br>
+            <span class="bullet-date">Date: October 2023</span><br>
+            <span class="bullet-description">Description: Certification in advanced CFD simulations using OpenFOAM.</span>
+        </li>
+        <li class="bullet-item">
+            <span class="bullet-title">Programming CFD </span><br>
+            <span class="bullet-provider">Provider: CFD Direct Limited </span><br>
+            <span class="bullet-date">Date: November 2023</span><br>
+            <span class="bullet-description">Description: Certification in advanced CFD simulations using OpenFOAM.</span>
+        </li>
+        <li class="bullet-item">
+            <span class="bullet-title">Programming using GPU CUDA </span><br>
+            <span class="bullet-provider">Provider: DCSE TU Delft </span><br>
+            <span class="bullet-date">Date: October 2023</span><br>
+            <span class="bullet-description">Description: Certification in advanced CFD simulations using OpenFOAM.</span>
+        </li>
+        <li class="bullet-item">
+            <span class="bullet-title">Programming using MPI  </span><br>
+            <span class="bullet-provider">Provider: DCSE TU Delft </span><br>
+            <span class="bullet-date">Date: October 2023</span><br>
+            <span class="bullet-description">Description: Certification in advanced CFD simulations using OpenFOAM.</span>
+        </li>
+        <li class="bullet-item">
+            <span class="bullet-title">OpenFOAM General Programming Course </span><br>
+            <span class="bullet-provider">Provider: Von Karman Institute (VKI) </span><br>
+            <span class="bullet-date">Date: October 2023</span><br>
+            <span class="bullet-description">Description: Certification in advanced CFD simulations using OpenFOAM.</span>
+        </li>
+        <li class="bullet-item">
+            <span class="bullet-title">Turbulence </span><br>
+            <span class="bullet-provider">Provider: J.M. Burgerscentrum School for Fluid Mechanics </span><br>
+            <span class="bullet-date">Date: October 2023</span><br>
+            <span class="bullet-description">Description: Certification in advanced CFD simulations using OpenFOAM.</span>
+        </li>
+      </ul>
+    </div>
 	</section>
 
+
+<style>
+    .interest-listing {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .interest-item {
+        font-size: 1em;
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+
+    .interest-title {
+        font-weight: bold;
+        color: #0056b3; 
+        margin-right: 5px; 
+    }
+
+    .interest-description {
+        color: #555; 
+    }
+</style>
 	<section>
-		<h2>Fields of Interest</h2>
-		<ul>
-			<li>**CFD Simulations**: Solving complex fluid flow problems using advanced computational methods.</li>
-			<li>**CFD Software Development**: Designing and implementing efficient solvers tailored to engineering applications.</li>
-			<li>**Vortex Methods**: Exploring hybrid Eulerian-Lagrangian techniques for aerodynamic simulations.</li>
-			<li>**External Aerodynamics**: Investigating flow behavior around airfoils, vehicles, and wind turbines.</li>
-			<li>**Software Engineering**: Developing robust, user-friendly tools for scientific computing.</li>
-			<li>**Software Acceleration**: Optimizing performance through parallel computing (CUDA, OpenMP).</li>
-			<li>**Heat Transfer**: Analyzing thermal effects in energy systems and plasma applications.</li>
+    <h2 onclick="toggleSection(this)" style="cursor: pointer;">
+    	Fields of Interest <span class="arrow">></span>
+		</h2>
+    <div class="collapsible-content" style="display: none;">
+			<ul>
+        <li class="interest-item">
+            <span class="interest-title">CFD Simulations</span>: 
+            <span class="interest-description">Solving complex fluid flow problems using advanced computational methods.</span>
+        </li>
+        <li class="interest-item">
+            <span class="interest-title">CFD Software Development</span>: 
+            <span class="interest-description">Designing and implementing efficient solvers tailored to engineering applications.</span>
+        </li>
+        <li class="interest-item">
+            <span class="interest-title">Vortex Methods</span>: 
+            <span class="interest-description">Exploring hybrid Eulerian-Lagrangian techniques for aerodynamic simulations.</span>
+        </li>
+        <li class="interest-item">
+            <span class="interest-title">External Aerodynamics</span>: 
+            <span class="interest-description">Investigating flow behavior around airfoils, vehicles, and wind turbines.</span>
+        </li>
+        <li class="interest-item">
+            <span class="interest-title">Software Engineering</span>: 
+            <span class="interest-description">Developing robust, user-friendly tools for scientific computing.</span>
+        </li>
+        <li class="interest-item">
+            <span class="interest-title">Software Acceleration</span>: 
+            <span class="interest-description">Optimizing performance through parallel computing (CUDA, OpenMP).</span>
+        </li>
+        <li class="interest-item">
+            <span class="interest-title">Heat Transfer</span>: 
+            <span class="interest-description">Analyzing thermal effects in energy systems and plasma applications.</span>
+        </li>
 		</ul>
+	</div>
 	</section>	
 </div>

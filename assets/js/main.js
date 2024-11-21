@@ -19,3 +19,19 @@ scrollToTopBtn.addEventListener("click", () => {
     behavior: "smooth" // Smooth scrolling
   });
 });
+
+
+function toggleSection(header) {
+    const content = header.nextElementSibling;
+    const arrow = header.querySelector('.arrow');
+
+    if (content && content.classList.contains('collapsible-content')) {
+        const isCollapsed = content.style.display === 'none';
+        content.style.display = isCollapsed ? 'block' : 'none';
+
+        // Toggle CSS classes for rotation
+        arrow.classList.toggle('collapsed', !isCollapsed);
+        arrow.classList.toggle('expanded', isCollapsed);
+    }
+}
+
