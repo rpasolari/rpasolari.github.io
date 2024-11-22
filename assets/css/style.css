@@ -1,77 +1,41 @@
-html, body {
-  height: 100%;
+* {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin-left: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-}
-
-main {
-  flex: 1;
-}
-
-.content-container {
-  max-width: 60%;
-  margin: 0 auto;
-  padding: 0px;
-  flex: 1; /
+  box-sizing: border-box;
+  background-color: var(--body-background-color);
 }
 
 /* Body settings */
-
 body {
   font-family: var(--body-font);
   font-size: var(--body-font-size);
   color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-}
-
-h1 {
-  font-size: var(--heading1-font-size);
-  font-weight: bold;
-  color: var(--heading1-color);
-}
-
-h2 {
-  font-size: var(--heading2-font-size);
-  font-weight: bold;
-  color: var(--heading2-color);
-}
-
-li {
-  margin-bottom: 15px;
-
-}
-
-.name-highlight {
-  color: var(--name-highlight-color);
-  font-weight: bold;
-}
-
-a {
-  color: var(--url-color);
-  text-decoration: None;
-}
-
-a:hover {
-  color: var(--url-hover-color);
-  text-decoration: None;
 }
 
 /* Header settings */
-
 header {
   font-family: var(--header-font);
-  background-color: var(--header-background);
+  background-color: var(--header-background-color);
   color: var(--header-text-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 100px;
-  margin-bottom: 25px;
+  padding: 20px 20px;
+  margin-bottom: 45px;
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  z-index: 1000; 
+  box-sizing: border-box;
 }
 
 header .name-and-title {
@@ -88,7 +52,7 @@ header .name-and-title .name {
 
 header .name-and-title .title {
   font-size: var(--header-title-font-size);
-  margin-top: 3px;
+  margin-top: 0px;
 }
 
 header .menu {
@@ -115,25 +79,25 @@ header .menu ul li a:hover {
   text-decoration: underline;
 }
 
-
 /* Footer settings */
 footer {
-  background-color: var(--footer-background);
+  background-color: var(--footer-background-color);
   color: var(--footer-text-color);
   display: flex;
   align-items: center;
   flex-direction: column; 
   flex-shrink: 0;
-  margin-top: 30px;
+  margin-top: 0px;
   font-size: var(--footer-copyright-font-size);
-  padding-bottom: 12px;
+  padding-bottom: 20px;
+  padding-top: 30px;
+  box-sizing: border-box;
 }
 
 footer a img{
   text-decoration: none;
   width: 30px;
   height: 30px;
-  margin-top: 30px;
 }
 
 footer div {
@@ -143,13 +107,83 @@ footer div {
 }
 
 footer p {
-  margin-top: 12px;
+  margin-top: 15px;
 }
+
+/* Main settings */
+main {
+/*  flex: 1;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+/*  min-height: 100%;*/
+}
+
+.content-container {
+  width: 90%;
+  max-width: 800px;
+  min-width: 300px;
+  height: auto;
+  background-color: var(--main-top-color);
+  margin-top: 110px;
+  margin-bottom: 30px;
+  padding: 20px;
+  box-shadow: 0 4px 10px #0000001a;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+
+
+h1 {
+  font-size: var(--heading1-font-size);
+  font-weight: bold;
+  color: var(--heading1-color);
+}
+
+h2 {
+  font-size: var(--heading2-font-size);
+  font-weight: bold;
+  color: var(--heading2-color);
+}
+
+li {
+  margin-bottom: 0px;
+
+}
+
+.name-highlight {
+  color: var(--name-highlight-color);
+  font-weight: bold;
+}
+
+a {
+  color: var(--url-color);
+  text-decoration: None;
+}
+
+a:hover {
+  color: var(--url-hover-color);
+  text-decoration: None;
+}
+
+
+
+
+
+
+
 
 .arrow {
     display: inline-block; 
     vertical-align: middle; 
-    margin-left: 15px; 
+    margin-left: 0px; 
     font-size: 0.9em; 
     color: black;
     font-weight: bold; 
@@ -164,57 +198,44 @@ footer p {
 .arrow.expanded {
     transform: rotate(90deg); 
 
-
-.project-card {
-    position: relative; /* Enables positioning of overlay */
-    display: inline-block; /* Makes the card inline and adjusts size to content */
-    width: 20px; /* Set a fixed width for the card */
-    height: 20px; /* Set a fixed height for the card */
-    cursor: pointer; /* Makes it clear the card is clickable */
-    border-radius: 8px; /* Adds rounded corners */
-    overflow: hidden; /* Ensures overlay stays within the card */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.3s ease; /* Adds a hover animation */
+.project {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0px 0;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    gap: 120px;
 }
 
-.project-card:hover {
-    transform: scale(1.05); /* Slightly enlarges the card on hover */
+.project .text {
+    flex: 2;
 }
 
-.project-image {
-    width: 10%; /* Ensures the image fills the card */
-    height: 25px; /* Ensures the image fills the card */
-    object-fit: cover; /* Ensures the image scales properly */
+.project .media {
+    flex: 1;
+    text-align: center;
 }
 
-.project-overlay {
-    position: absolute; /* Positions the overlay on top of the image */
-    top: 0; /* Starts at the top of the card */
-    left: 0; /* Starts at the left of the card */
-    width: 100%; /* Covers the full width of the card */
-    height: 100%; /* Covers the full height of the card */
-    background: rgba(0, 0, 0, 0.5); /* Adds a dark transparent background */
-    color: white; /* Sets text color to white */
-    display: flex; /* Enables flexible alignment */
-    flex-direction: column; /* Stacks title and description vertically */
-    justify-content: center; /* Centers content vertically */
-    align-items: center; /* Centers content horizontally */
-    text-align: center; /* Aligns text in the center */
-    opacity: 0; /* Hides the overlay by default */
-    transition: opacity 0.3s ease; /* Smooth fade-in effect */
+/* Ensure consistent image size for all project images */
+.project .media img {
+  background-color: #fff;
+    display: block; /* Ensures proper layout behavior */
+    max-width: 100%; /* Prevents images from overflowing */
+    width: 500px; /* Fixed width for all images */
+    height: 350px; /* Fixed height for all images */
+    object-fit: cover; /* Crop to fill the dimensions */
+    border-radius: 8px; /* Rounded corners */
 }
 
-.project-card:hover .project-overlay {
-    opacity: 1; /* Shows the overlay on hover */
+
+.project h2 {
+    margin: 0;
+    color: #0077cc;
 }
 
-.project-title {
-    font-size: 1.5em; /* Larger font for the title */
-    margin: 0; /* Removes default margin */
-}
-
-.project-description {
-    font-size: 1em; /* Standard font size for description */
-    margin-top: 10px; /* Adds space between title and description */
-    padding: 0 10px; /* Adds padding for better readability */
+.project p {
+    margin: 0px 0 0;
 }
