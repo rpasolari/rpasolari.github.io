@@ -1,0 +1,35 @@
+<nav class="breadcrumb">
+  {% if page.url == "/" %} 
+    
+  {% else %}
+    <span><a href="{{ '/' | relative_url }}">Home</a></span> 
+    
+    {% assign path_parts = page.url | split: '/' %} 
+    {% assign path_parts = path_parts | reject: "" %} 
+    
+    {% assign current_path = "" %} 
+    {% assign first_part = true %} 
+    
+    {% for part in path_parts %}
+
+      {% if part == "pages" %}
+        {% assign current_path = current_path  | append: part %}
+        {% continue %}
+      {% endif %}
+      
+
+      {% if first_part %}
+        {% assign first_part = false %}
+        {% assign current_path = "/" | append: part %} 
+      {% else %}
+        <span> >> </span>
+        {% assign current_path = current_path | append: "/" | append: part %} 
+      {% endif %}
+      
+      <span>
+        <a href="{{ current_path | relative_url }}">{{ part | capitalize }}</a> 
+      </span>
+    {% endfor %}
+    
+  {% endif %}
+</nav>

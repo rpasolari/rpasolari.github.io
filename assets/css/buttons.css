@@ -1,25 +1,42 @@
-/* Scroll to Top Button */
+/* Go to top button */
 #scrollToTopBtn {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background-color: var(--button-color);
-  color: #4a4a4a; /* White text color */
-  border: 1px solid #dcdcdc; /* Subtle border */
-  border-radius: 8px; /* Smooth corners */
-  padding: 0.5rem 1rem; /* Padding inside the button */
-  font-size: 1.2rem; /* Slightly larger text size for the arrow */
-  font-weight: bold; /* Bold arrow */
-  cursor: pointer; /* Pointer cursor on hover */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  display: none; /* Initially hidden */
-  z-index: 1000; /* Ensures it stays above other content */
-  transition: opacity 0.3s ease; /* Smooth appearance and disappearance */
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: var(--button-background-color);
+  color: white;
+  font-size: 16px;
+  font-family: var(--button-font);
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  gap: 13px; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 1000; 
 }
 
-/* Hover Effect */
+#scrollToTopBtn .triangle {
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 12px solid white;
+  margin-top: 2px;
+}
+
+#scrollToTopBtn .text {
+  line-height: 1;
+  position: relative;
+}
+
 #scrollToTopBtn:hover {
-  background-color: #e0e0e0; /* Slightly darker gray on hover */
-  color: #333333; /* Darker arrow color on hover */
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+  background-color: black; 
+}
+
+#scrollToTopBtn.show {
+  display: inline-flex;
 }

@@ -34,4 +34,3 @@ function toggleSection(header) {
         arrow.classList.toggle('expanded', isCollapsed);
     }
 }
-

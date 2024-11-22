@@ -6,11 +6,14 @@ baseurl: ""
 url: "rpasolari@github.io"
 
 menu:
-  - title: "Home"
+  - title: Home
     url: /
-  - title: "About"
+  - title: About
     url: /pages/about/
-  - title: "Publications"
+  - title: Publications
     url: /pages/publications/
-  - title: "Projects"
+  - title: Projects
     url: /pages/projects/ 
+
+exclude_from_breadcrumbs:
+  - pages

@@ -9,7 +9,7 @@
   --text-color: #333;
   --heading1-color: #007bff;
   --heading2-color: #007bff;
-  --button-color: #007bff;
+  --button-background-color: #2d2d2d;
   --name-highlight-color: #007bff;
   --url-color: #007bff;
   --url-hover-color: #2d2d2d;
@@ -32,6 +32,8 @@
   --body-font: 'Arial', sans-serif;
   --heading-font: 'Georgia', serif;
   --monospace-font: 'Courier New', monospace;
+  --button-font: 'Arial', sans-serif;
+  --breadcrumb-font : 'Georgia', serif;
 }
 
 :root {
@@ -43,4 +45,5 @@
   --heading1-font-size: 2.4rem;
   --heading2-font-size: 2.1rem;
   --heading3-font-size: 1.6rem;
+  --breadcrumb-font-size: 1.0rem;
 }
