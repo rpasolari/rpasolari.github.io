@@ -277,6 +277,11 @@ footer p {
 .card a.btn:hover {
     background-color: #003d80;
 }
+
+.name-highlight {
+  font-weight: bold;
+  color: var(--highlight-color);
+}
 /*.breadcrumb {
   width: var(--container-width);
   max-width: var(--container-max-width);
