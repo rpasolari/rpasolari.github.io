@@ -13,7 +13,9 @@ menu:
   - title: Publications
     url: /pages/publications/
   - title: Projects
-    url: /pages/projects/ 
+    url: /pages/projects/
+  - title: Contact
+    url: /pages/contact 
 
 exclude_from_breadcrumbs:
   - pages

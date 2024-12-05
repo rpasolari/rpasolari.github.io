@@ -20,6 +20,23 @@ scrollToTopBtn.addEventListener("click", () => {
   });
 });
 
+// --------------------------------------------------------------------
+// Highlight current page in menu
+
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("header .menu ul li a");
+    const currentUrl = window.location.pathname;
+
+    links.forEach(link => {
+        if (link.getAttribute("href") === currentUrl) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+    });
+});
+
+// --------------------------------------------------------------------
 
 function toggleSection(header) {
     const content = header.nextElementSibling;
@@ -34,3 +51,4 @@ function toggleSection(header) {
         arrow.classList.toggle('expanded', isCollapsed);
     }
 }
+

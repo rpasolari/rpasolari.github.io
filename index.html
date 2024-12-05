@@ -2,85 +2,56 @@
 layout: default
 title: Home
 ---
+<style>
+.content-container .intro-container {
+  text-align: center;
 
-<head>
-  <style>
-    /* Hero Section with Background Image */
-    .hero-section {
-      background-image: url('{{ "/assets/images/fields_aoa=25.png" | relative_url }}');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
+}
 
-    .content-overlay {
-      text-align: center;
-      color: white;
-      background-color: rgba(0, 0, 0, 0.6); /* Overlay for better text visibility */
-      padding: 30px;
-      border-radius: 10px;
-    }
+.content-container .intro-container .title {
+  width: 100%;
+  font-size: var(--heading1-font-size);
+  margin: 10px 0;
+}
 
-    .hero-section h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
+.content-container .intro-container .image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; 
+    margin: 30px auto;
+}
 
-    .hero-section p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
+.link-section {
+    display: flex;
+    justify-content: center; /* Center the entire section */
+    align-items: center; /* Align items vertically */
+}
 
-    .hero-section .btn {
-      background-color: #007bff;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-    }
+.cta-link {
+    text-decoration: none;
+    margin: 0 15px;
+}
 
-    .hero-section .btn:hover {
-      background-color: #0056b3;
-    }
+</style>
 
-    /* Introduction Section */
-    .intro {
-      padding: 50px 20px;
-      background-color: #f8f9fa;
-      text-align: center;
-    }
+<div class="content-container">
+    <div class="intro-container">
+        <h1 class="title">CFD Methodologist & Software Developer</h1>
 
-    .intro h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
+        <img src="assets/images/avatar.png" alt="Avatar of Rention Pasolari" class="image">
+    </div>
 
-    .intro p {
-      font-size: 1.1rem;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
-  </style>
-</head>
+    <div class="full-width-box full-width-box-secondary">
+      <div class="inner-content">
+        <h3> Hey, I'm Rention (aka Kyriakos), nice to meet you! </h3>
+        <p>
+            I am a Mechanical Engineer with an MEng qualification and a Ph.D. candidate at the Aerospace Faculty of TU Delft, with a passion for Computational Mechanics. My expertise focuses on Computational Fluid Dynamics (CFD) and software development. This website highlights my academic journey, technical skills, and projects, reflecting my dedication to advancing computational science and engineering.
+        </p>
 
-<!-- Hero Section -->
-<div class="hero-section">
-  <div class="content-overlay">
-    <h1>Welcome to My Website</h1>
-    <p>Explore my projects, publications, and more!</p>
-    <a href="/about" class="btn">Learn More</a>
+        <div class="link-section">
+            <a href="/pages/about" class="cta-link">See More About Me</a>
+            <a href="/pages/contact" class="cta-link">Contact Me</a>
+      </div>
+    </div>
   </div>
 </div>
-
-<!-- Introduction Section -->
-<section class="intro">
-  <h2>About This Website</h2>
-  <p>This is where I share my work and research. Explore the sections to know more about me and my projects.</p>
-</section>

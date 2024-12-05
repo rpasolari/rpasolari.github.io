@@ -1,49 +1,56 @@
 /* Colors */
 :root {
-  --body-background-color: #f8f9fa;
-  --main-top-color: #ffffff;
-  --header-background-color: #2d2d2d;
-  --header-text-color: #f5f5f5;
-  --footer-background-color: #2d2d2d;
-  --footer-text-color: #f5f5f5;
-  --text-color: #333;
-  --heading1-color: #007bff;
-  --heading2-color: #007bff;
-  --button-background-color: #2d2d2d;
-  --name-highlight-color: #007bff;
-  --url-color: #007bff;
-  --url-hover-color: #2d2d2d;
+  --body-background-color: #FFFFFF; /* Pure White for the main background */
+  --second-body-background-color: #F7F7F7; /* Very Light Gray for secondary sections */
+  --line-dark-color: #D1D5DB; /*Darker gray for divider*/
+  --header-background-color: #1E293B; /* Dark Blue Gray for a bold, modern header */
+  --header-text-color: #F8FAFC; /* Light Gray-White for header text */
+  --footer-background-color: #1E293B; /* Same as header for consistency */
+  --footer-text-color: #F8FAFC; /* Light Gray-White for footer text */
+  --text-color: #374151; /* Cool Dark Gray for body text, softer than black */
+  --heading1-color: #0EA5E9; /* Vibrant Cyan Blue for primary headings */
+  --heading2-color: #0284C7; /* Deep Blue for secondary headings */
+  --button-background-color: #2563EB; /* Bright Blue for buttons */
+  --button-text-color: #FFFFFF; /* White text for buttons */
+  --url-color: #0EA5E9; /* Cyan Blue for links */
+  --url-hover-color: #0284C7; /* Darker Blue for hover state */
 
-
-  --primary-color: #007bff; /* Primary blue */
-  --secondary-color: #6c757d; /* Secondary gray */
-  --background-color: #f8f9fa; /* Light background */
-  --helper-green-color: #48bb78;
-  --helper-red-color: #e74c3c;
-
-  --header-color: #ff6b6b; /* Header or accent color */
-  --accent-color: #ffca28; /* Highlight color */
+  /* Helper Colors */
+  --helper-green-color: #22C55E; /* Soft Green for success */
+  --helper-green-light-color: #DCFCE7; /* Pale Green for success backgrounds */
+  --helper-red-color: #EF4444; /* Vibrant Red for errors */
+  --helper-red-light-color: #FEE2E2; /* Pale Red for error backgrounds */
+  --helper-yellow-color: #FACC15; /* Bright Yellow for warnings */
+  --helper-yellow-light-color: #FEF9C3; /* Pale Yellow for warning backgrounds */
 }
 
 /* Fonts */
 :root {
-  --header-font: 'Georgia', serif;
-  --footer-font: 'Georgia', serif;
-  --body-font: 'Arial', sans-serif;
-  --heading-font: 'Georgia', serif;
-  --monospace-font: 'Courier New', monospace;
-  --button-font: 'Arial', sans-serif;
-  --breadcrumb-font : 'Georgia', serif;
+  --header-font: 'Poppins', sans-serif; /* Clean and modern sans-serif */
+  --footer-font: 'Poppins', sans-serif; /* Same for consistency */
+  --body-font: 'Roboto', sans-serif; /* Highly legible and professional */
+  --heading-font: 'Lora', serif; /* Elegant and distinct for headings */
+  --monospace-font: 'Fira Code', monospace; /* Designed for developers with ligatures */
+  --button-font: 'Roboto', sans-serif; /* Matches body for consistency */
+  --breadcrumb-font: 'Roboto Slab', serif; /* Balanced serif font for breadcrumbs */
 }
 
 :root {
-  --header-menu-font-size: 0.9rem;
-  --header-name-font-size: 1.1rem;
-  --header-title-font-size: 0.9rem;
-  --footer-copyright-font-size: 0.8rem;
-  --body-font-size: 1.0rem;
-  --heading1-font-size: 2.4rem;
-  --heading2-font-size: 2.1rem;
-  --heading3-font-size: 1.6rem;
-  --breadcrumb-font-size: 1.0rem;
+  /* General Text Sizes */
+  --body-font-size: 1rem; /* Base font size for body text */
+  --small-body-font-size: 0.875rem; /* Small text for captions or notes */
+  --large-body-font-size: 1.25rem; /* Larger text for emphasis or intros */
+  /* Headings */
+  --heading1-font-size: 2.5rem; /* Largest heading (e.g., page titles) */
+  --heading2-font-size: 2rem; /* Second-level heading */
+  --heading3-font-size: 1.5rem; /* Third-level heading */
+  --heading4-font-size: 1.25rem; /* Fourth-level heading*/
+  /* Navigation and UI Text */
+  --header-menu-font-size: 1rem; /* Font size for header menu items */
+  --header-name-font-size: 1.25rem; /* Slightly larger for names or logos */
+  --header-title-font-size: 1rem; /* Subtitles or secondary text in the header */
+  --breadcrumb-font-size: 0.875rem; /* Small text for breadcrumbs */
+  --button-font-size: 1rem; /* Consistent with body text for clarity */
+  /* Footer */
+  --footer-copyright-font-size: 0.875rem; /* Small text for copyright or disclaimers */
 }
