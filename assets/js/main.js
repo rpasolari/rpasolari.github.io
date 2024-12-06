@@ -24,7 +24,7 @@ scrollToTopBtn.addEventListener("click", () => {
 // Highlight current page in menu
 
 document.addEventListener("DOMContentLoaded", () => {
-    const links = document.querySelectorAll("header .menu ul li a");
+    const links = document.querySelectorAll(".menu ul li a");
     const currentUrl = window.location.pathname;
 
     links.forEach(link => {

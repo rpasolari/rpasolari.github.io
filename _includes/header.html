@@ -3,18 +3,12 @@ header {
     font-family: var(--header-font);
     background-color: var(--header-background-color);
     color: var(--header-text-color);
-    display: flex;
-    justify-content: center;
-    padding: 1rem 0;
-    margin-bottom: 3rem;
-    top: 0;
-    left: 0;
     width: 100%;
     box-sizing: border-box;
-    align-items: flex-start;
+
 }
 
-header .container {
+.container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -25,70 +19,111 @@ header .container {
     box-sizing: border-box;
 }
 
-header .name-and-title {
+.name-and-title {
+    position: relative;
     display: flex;
     flex-direction: column;
     color: inherit;
     text-decoration: none;
-    justify-content: flex-start;
-    align-items: flex-start;
+    align-self: self-end;
 }
 
-header .name-and-title:hover {
+.name-and-title:hover {
   color: var(--helper-yellow-light-color);
 }
-
-header .name-and-title .name {
+.name-and-title .name {
     font-size: var(--header-name-font-size);
     font-weight: bold;
 }
 
-header .name-and-title .title {
+.name-and-title .title {
     font-size: var(--header-title-font-size);
     margin-top: 0px;
 }
-header .menu {
+
+.menu {
     font-size: var(--header-menu-font-size);
     align-self: center;
+}
+
+.extended-menu-box {
+    display: flex; /* Keep it in the flow */
+    flex-direction: column; /* Maintain layout */
+    width: 100%;
+    background-color: lightblue;
+    overflow: hidden; /* Prevent content overflow during animation */
+    height: 0; /* Collapse the box completely */
+    transition: height 0.3s ease; /* Smooth expand/collapse animation */
+}
+
+.extended-menu-box.is-active {
+    height: auto; /* Allow it to expand to fit the content */
+    overflow: hidden; /* Prevent overflow during transition */
+}
+nav.hamburger-menu {
+    display: flex;
 
 }
 
-header .menu ul {
+nav.hamburger-menu ul{
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0rem;
+
+}
+nav.hamburger-menu ul li {
+    position: relative;
+    width: 100vw;
+    text-align: center;
+    background-color: transparent;
+    padding: 0.6rem 0;
+}
+nav.hamburger-menu ul li + li::before {
+    content: '';
+    position: absolute;
+    top: -0.3rem; 
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white; 
+}
+
+.menu ul {
     list-style: none;
     display: flex;
     gap: 1rem;
     margin: 0;
     padding: 0;
 }
-
-header .menu ul li a {
+.menu ul li a {
     text-decoration: none;
     color: var(--header-text-color);
     font-weight: bold;
 }
 
-header .menu ul li a:hover {
+.menu ul li a:hover {
   color: var(--helper-yellow-light-color);
 }
 
-header .menu ul li a.active {
+.menu ul li a.active {
     text-decoration: underline;
     text-decoration-color: red; 
     text-decoration-thickness: 3px; 
     text-underline-offset: 6px;
 }
 
-.hamburger-menu {
+.menu-icon {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
     flex-direction: column;
-    gap: 0.3rem;
-    padding-right: 67px;
+    align-items: center;
+    align-self: center;
+    gap: 4px;
 }
 
-.hamburger-menu span {
+.menu-icon span {
     display: block;
     width: 25px;
     height: 3px;
@@ -97,80 +132,118 @@ header .menu ul li a.active {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.hamburger-menu.is-active span:nth-child(1) {
+.menu-icon.is-active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 6px);
 }
 
-.hamburger-menu.is-active span:nth-child(2) {
+.menu-icon.is-active span:nth-child(2) {
     opacity: 0;
 }
 
-.hamburger-menu.is-active span:nth-child(3) {
+.menu-icon.is-active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -6px);
 }
 
 @media screen and (max-width: 768px) {
-    header {
-        flex-direction: column;
+    .menu-icon {
+        display: flex;
     }
 
-    header .menu {
-              align-self: flex-start;
-              padding-top: 20px;
-    }
-
-    header .menu ul {
+    .menu {
         display: none;
-        flex-direction: column;
-        gap: 0.5rem; 
-        margin-top: 1rem;
     }
 
-    header .menu ul.is-active {
+    .extended-menu-box.is-active {
         display: flex;
-        flex-direction: column; 
-        gap: 0.5rem; 
-        margin-top: 1rem;
     }
 
-    .hamburger-menu {
-        display: flex;
-    }
 }
+
+
 </style>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    const hamburgerMenu = document.querySelector(".hamburger-menu");
-    const list = document.querySelector("header .menu ul");
+    const iconMenu = document.querySelector(".menu-icon");
+    const extendedMenu = document.querySelector(".extended-menu-box");
 
-    hamburgerMenu.addEventListener("click", () => {
-        hamburgerMenu.classList.toggle("is-active");
-        list.classList.toggle("is-active");
+    // Initialize the menu with height 0
+    extendedMenu.style.height = "0";
+
+    iconMenu.addEventListener("click", () => {
+        if (extendedMenu.classList.contains("is-active")) {
+            // Collapse the menu
+            extendedMenu.style.height = `${extendedMenu.scrollHeight}px`; // Set height to content height first
+            requestAnimationFrame(() => {
+                extendedMenu.style.height = "0"; // Then collapse
+                extendedMenu.classList.remove("is-active");
+            });
+        } else {
+            // Expand the menu
+            extendedMenu.style.height = "0"; // Reset height before expanding
+            extendedMenu.classList.add("is-active");
+            requestAnimationFrame(() => {
+                extendedMenu.style.height = `${extendedMenu.scrollHeight}px`; // Set height to content height
+            });
+        }
     });
+
+    // Reset to auto height after transition
+    extendedMenu.addEventListener("transitionend", () => {
+        if (extendedMenu.classList.contains("is-active")) {
+            extendedMenu.style.height = "auto";
+        }
+    });
+});
+
+window.addEventListener('resize', () => {
+    const extendedMenu = document.querySelector('.extended-menu-box');
+    const iconMenu = document.querySelector('.menu-icon');
+
+    if (window.innerWidth > 768) {
+        // Reset menu to initial state
+        extendedMenu.classList.remove('is-active');
+        iconMenu.classList.remove('is-active');
+        extendedMenu.style.height = '0'; 
+    } else {
+        // Clear inline styles to allow CSS to control height again
+        extendedMenu.style.height = '';
+    }
 });
 </script>
 
 
 <header>
   <div class="container">
-  <a href="/" class="name-and-title">
-    <span class="name">Rention Pasolari</span>
-    <span class="title">CFD Methodologist</span>
-  </a>
-  <nav class="menu"> 
-    <button class="hamburger-menu" aria-label="Menu" aria-expanded="false">
+    <a href="/" class="name-and-title">
+        <span class="name">Rention Pasolari</span>
+        <span class="title">CFD Methodologist</span>
+     </a>
+    <button class="menu-icon" aria-label="Menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
-    </button>
-     <ul>
-      {% for item in site.menu %}
-        <li><a href="{{ item.url | prepend: site.baseurl | relative_url }}">{{ item.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </nav>
-
-</div>
+     </button>
+     <nav class="menu"> 
+         <ul>
+             {% for item in site.menu %}
+             <li><a href="{{ item.url | prepend: site.baseurl | relative_url }}">{{ item.title }}</a>
+             </li>
+             {% endfor %}
+         </ul>
+    </nav>
+  </div>
 </header>
+
+<div class="extended-menu-box">
+    <div class="container" style="justify-content: center;">
+         <nav class="menu hamburger-menu"> 
+             <ul>
+                 {% for item in site.menu %}
+                 <li><a href="{{ item.url | prepend: site.baseurl | relative_url }}">{{ item.title }}</a>
+                 </li>
+                 {% endfor %}
+             </ul>
+        </nav>
+    </div>
+</div>
