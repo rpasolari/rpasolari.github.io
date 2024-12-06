@@ -5,7 +5,6 @@ header {
     color: var(--header-text-color);
     width: 100%;
     box-sizing: border-box;
-
 }
 
 .container {
@@ -14,8 +13,9 @@ header {
     align-items: flex-start;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    margin: 2rem auto;
+    margin-bottom: 1rem;
+    padding: 0 3rem;
     box-sizing: border-box;
 }
 
@@ -23,9 +23,9 @@ header {
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
     color: inherit;
     text-decoration: none;
-    align-self: self-end;
 }
 
 .name-and-title:hover {
@@ -38,7 +38,6 @@ header {
 
 .name-and-title .title {
     font-size: var(--header-title-font-size);
-    margin-top: 0px;
 }
 
 .menu {
@@ -47,22 +46,22 @@ header {
 }
 
 .extended-menu-box {
-    display: flex; /* Keep it in the flow */
-    flex-direction: column; /* Maintain layout */
+    display: flex; 
+    flex-direction: column; 
     width: 100%;
-    background-color: lightblue;
-    overflow: hidden; /* Prevent content overflow during animation */
-    height: 0; /* Collapse the box completely */
-    transition: height 0.3s ease; /* Smooth expand/collapse animation */
+    background-color: darkgray;
+    overflow: hidden; 
+    height: 0; 
+    transition: height 0.3s ease;
 }
 
 .extended-menu-box.is-active {
-    height: auto; /* Allow it to expand to fit the content */
-    overflow: hidden; /* Prevent overflow during transition */
+    height: auto; 
+    overflow: hidden; 
 }
 nav.hamburger-menu {
     display: flex;
-
+    margin: -2rem;
 }
 
 nav.hamburger-menu ul{
@@ -106,10 +105,7 @@ nav.hamburger-menu ul li + li::before {
 }
 
 .menu ul li a.active {
-    text-decoration: underline;
-    text-decoration-color: red; 
-    text-decoration-thickness: 3px; 
-    text-underline-offset: 6px;
+    color: red;
 }
 
 .menu-icon {
@@ -158,7 +154,6 @@ nav.hamburger-menu ul li + li::before {
     }
 
 }
-
 
 </style>
 

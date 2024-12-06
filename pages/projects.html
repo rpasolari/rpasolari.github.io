@@ -4,29 +4,143 @@ title: Projects
 permalink: /pages/projects/
 ---
 
+<style>  
+.project-card {
+    background: #fff; /* White background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    max-width: 350px; /* Slightly larger max width */
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; /* For positioning the title */
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.project-card .title {
+    position: absolute; /* Place the title at the top-left */
+    top: 10px;
+    left: 10px;
+    background-color: #0056b3; /* Dark blue background */
+    color: #fff; /* White text */
+    font-size: 1em;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.project-card img {
+    display: block;
+    width: 100%; /* Responsive image */
+    max-height: 200px; /* Set a max height */
+    object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+    margin: 20px 0; /* Space around the image */
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+.project-card .about {
+    font-size: 0.9em; /* Slightly smaller font */
+    color: #555; /* Subtle text color */
+    margin-bottom: 10px;
+}
+
+.project-card .skills {
+    font-size: 0.9em;
+    color: #0056b3; /* Blue color for skills */
+    font-weight: bold;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Wrap skills in multiple lines */
+    gap: 5px; /* Space between skills */
+}
+
+.project-card .skills span {
+    background-color: #e0f0ff; /* Light blue background for skills */
+    color: #0056b3;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85em;
+}
+}
+</style>
+
 <div class="content-container">
 
-    <h1>Projects</h1>
-
-    <!-- Project 1 -->
-    <div class="project">
+    <div class="section-with-image-right">
         <div class="text">
-            <h3><a href="/pages/projects/first-project">Project 1 Title</a></h3>
-            <p>This is a short description of Project 1. It highlights what the project is about and what was achieved.</p>
-        </div>
-        <div class="media">
-           <img src="https://via.placeholder.com/300x200.png?text=Project+1+Image" alt="Project 1 Image">
+            <h1 style=" text-align: center;">Projects</h1>
+            <p>Here you can view all the collection of the projects I have worked on.</p>
+        </div>      
+        <div class="image">
+            <img src="/assets/images/projects.png" alt="Avatar">
         </div>
     </div>
 
     <!-- Project 1 -->
-    <div class="project">
-        <div class="text">
-            <h3><a href="/pages/projects/second-project">Project 1 Title</a></h3>
-            <p>This is a short description of Project 1. It highlights what the project is about and what was achieved.</p>
-        </div>
-        <div class="media">
-           <img src="https://via.placeholder.com/300x200.png?text=Project+1+Image" alt="Project 1 Image">
+    <div class="full-width-box full-width-box-secondary">
+        <div class="inner-content">
+            <div class="cards-container" style="align-items: flex-start;">
+                <div class="project-card">
+                    <div class="title">FE-DBD Plasma Reactor</div>
+                    <img src="/assets/images/projects.png" alt="Project Image">
+                    <p class="about">
+                        A brief description of the project goes here. Keep it concise and to the point.
+                        A brief description of the project goes here. Keep it concise and to the point.
+                        A brief description of the project goes here. Keep it concise and to the point.
+                    </p>
+                    <div class="skills">
+                        <span>OpenFOAM</span>
+                        <span>CHTMultiRegion</span>
+                        <span>Heat Transfer</span>
+                        <span>Python</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="title">Project Title</div>
+                    <img src="/assets/images/projects.jpg" alt="Project Image">
+                    <p class="about">
+                        A brief description of the project goes here. Keep it concise and to the point.
+                    </p>
+                    <div class="skills">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Python</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="title">Project Title</div>
+                    <img src="/assets/images/projects.jpg" alt="Project Image">
+                    <p class="about">
+                        A brief description of the project goes here. Keep it concise and to the point.
+                    </p>
+                    <div class="skills">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Python</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="title">Project Title</div>
+                    <img src="/assets/images/projects.jpg" alt="Project Image">
+                    <p class="about">
+                        A brief description of the project goes here. Keep it concise and to the point.
+                    </p>
+                    <div class="skills">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Python</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+

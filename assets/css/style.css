@@ -143,27 +143,48 @@ footer p {
 }
 
 .section-with-image-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  margin: 20px 0;
+  margin: 10px 0; 
   flex-wrap: wrap;
 }
 
+.section-with-image-right .text {
+  flex: 0 0 60%; 
+  text-align: justify; 
+  padding-right: 20px;
+}
+
 .section-with-image-right .image {
-  width: 350px;
-  height: 350px;
-  max-width: 100%;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 30px;
-  float: right;
-  font-weight: bold;
-  padding: 20px;
-  shape-outside: circle();
+  flex: 0 0 30%;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.section-with-image-right .image img {
+  width: 100%;
+  max-width: 400px; 
+  height: auto; 
+  border-radius: 10%;
 
 }
-.section-with-image-right .text {
-  text-align: justify;
+
+@media screen and (max-width: 768px) {
+  .section-with-image-right {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section-with-image-right .image img {
+    max-width: 350px; /* Reduces the image size for smaller screens */
+  }
+
 }
+
 .section-with-image-left{
   width: 100%;
   margin: 20px 0;
@@ -228,7 +249,7 @@ footer p {
 }
 
 .cards-container {
-   width: 120%;
+  width: 120%;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
