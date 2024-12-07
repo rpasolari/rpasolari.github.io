@@ -304,6 +304,113 @@ footer p {
   font-weight: bold;
   color: var(--highlight-color);
 }
+
+
+/* Filter Menu */
+.filter-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filter-btn.active {
+  background: #007bff;
+  color: white;
+}
+
+.filter-btn:hover {
+  background: #0056b3;
+  color: white;
+}
+
+/* Skills Grid */
+.skills-grid {
+  width: 120%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 90vw;
+}
+
+/* Card Design */
+.skill-card {
+  background: white;
+  border-radius: 8px;
+  width: 120px;
+  height: 150px; /* Adjusted height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Ensures proper vertical alignment */
+  padding: 10px; /* Adjusted padding */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+}
+
+.skill-card img {
+  height: 50px;
+  max-height: 70px;
+  max-width: 120px;
+  width: auto;
+  margin-top: 10px;
+  margin-bottom: auto; /* Creates space between the image and name */
+}
+
+.skill-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.skill-card p strong {
+  margin-top: auto; /* Pushes the skill name closer to "Years of Use" */
+}
+
+.skill-card .years-of-use {
+  font-weight: bold;
+  font-size: 12px; /* Slightly smaller font for balance */
+  color: #333;
+  margin-bottom: 5px; /* Adjusts spacing from the bottom */
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Personal Note for Hover */
+.skill-card .personal-note {
+  display: none; /* Hidden by default */
+  position: absolute;
+  bottom: 2px;
+  left: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  opacity: 0; /* Smooth fade-in effect */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.skill-card:hover .personal-note {
+  display: block;
+  opacity: 1;
+}
 /*.breadcrumb {
   width: var(--container-width);
   max-width: var(--container-max-width);
@@ -322,7 +429,4 @@ footer p {
 }
 */
 
-
-
-
-
+/* General Styling */

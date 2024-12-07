@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 732.92 1007.35">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6 {
+        stroke-width: 0px;
+      }
+
+      .cls-4 {
+        fill: #f7f7f7;
+      }
+
+      .cls-4, .cls-5, .cls-6 {
+        fill-rule: evenodd;
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: #4d4d4d;
+        font-family: LucidaBright, 'Lucida Bright';
+        font-size: 192px;
+      }
+
+      .cls-6 {
+        fill: #000800;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="943.14" y1="-210.08" x2="-619.85" y2="-316.08" gradientTransform="translate(202.2 830.6) scale(.64)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+  </defs>
+  <g id="svg3942">
+    <g id="g943">
+      <g id="g935">
+        <path id="path927" class="cls-3" d="M366.89,0L0,700.25l732.92-.09L366.89,0Z"/>
+        <path id="path929" class="cls-6" d="M366.89,1.27l.05,605.09,365.97,95.08L366.89,1.27Z"/>
+        <path id="path931" class="cls-4" d="M366.89,1.27L0,701.52l366.94-95.17-.05-605.09h0Z"/>
+        <path id="path933" class="cls-5" d="M732.92,701.44l-732.92.09,366.94-95.17,365.97,95.08h.01Z"/>
+      </g>
+      <g id="g941">
+        <g id="text939" class="cls-1">
+          <g class="cls-1">
+            <text class="cls-2" transform="translate(88.18 966.85)"><tspan x="0" y="0">Gmsh</tspan></text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

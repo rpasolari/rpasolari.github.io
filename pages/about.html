@@ -90,6 +90,31 @@ permalink: /pages/about/
 
 </style>
 
+<script>
+function filterCards(category) {
+  const cards = document.querySelectorAll('.skill-card');
+  const buttons = document.querySelectorAll('.filter-btn');
+
+  // Reset active button
+  buttons.forEach((btn) => btn.classList.remove('active'));
+
+  // Set active button
+  event.currentTarget.classList.add('active');
+
+  // Show or hide cards
+  cards.forEach((card) => {
+    if (category === 'all' || card.dataset.category.split(' ').includes(category)) {
+      card.style.visibility = 'visible';
+      card.style.position = 'relative';
+    } else {
+      card.style.visibility = 'hidden';
+      card.style.position = 'absolute';
+    }
+  });
+}
+</script>
+
+
 <div class="content-container">
 
     
@@ -165,11 +190,136 @@ permalink: /pages/about/
     </div>
 
     <div class="full-width-box full-width-box-primary">
-        <h2> Technology Stack</h2>
-        <div class="inner-content ">
-            <img src="/assets/images/monitor.png" alt="Monitor SVG" class="inner-image" />
+      <h2>Skills</h2>
+      <div class="filter-menu">
+        <button class="filter-btn active" onclick="filterCards('all')">All</button>
+        <button class="filter-btn" onclick="filterCards('engineering')">Engineering & Simulation</button>
+        <button class="filter-btn" onclick="filterCards('development')">Development</button>
+        <button class="filter-btn" onclick="filterCards('documentation')">Documentation & Design</button>
+        <button class="filter-btn" onclick="filterCards('os')">Operating Systems</button>
+      </div>
+      <div class="inner-content">
+        <div class="skills-grid">
+          <!-- Engineering -->
+          <div class="skill-card" data-category="engineering">
+            <img src="/assets/images/software/openfoam.svg" alt="OpenFOAM">
+            <p><strong>OpenFOAM</strong></p>
+            <p class="years-of-use">Years of Use: 7+</p>
+            <p class="personal-note">My favorite CFD software, loved for its power and flexibility.</p>
+          </div>
+          <div class="skill-card" data-category="engineering">
+            <img src="/assets/images/software/freecad.svg" alt="FreeCAD">
+            <p><strong>FreeCAD</strong></p>
+            <p class="years-of-use">Years of Use: 1+</p>
+            <p class="personal-note">Best free 3D design tool, but with a steep curve.</p>
+          </div>
+          <div class="skill-card" data-category="engineering" >
+            <img src="/assets/images/software/gmsh.svg" alt="Gmsh" style="height: 65px;">
+            <p><strong>Gmsh</strong></p>
+            <p class="years-of-use">Years of Use: 3+</p>
+            <p class="personal-note">A great free tool for meshing, efficient and reliable.</p>
+          </div>
+          <div class="skill-card" data-category="engineering">
+            <img src="/assets/images/software/paraview.svg" alt="ParaView">
+            <p><strong>ParaView</strong></p>
+            <p class="years-of-use">Years of Use: 6+</p>
+            <p class="personal-note">A great free tool for visualization and VTK handling.</p>
+          </div>
+
+          <!-- Development -->
+          <div class="skill-card" data-category="development">
+            <img src="/assets/images/software/python.svg" alt="Python">
+            <p><strong>Python</strong></p>
+            <p class="years-of-use">Years of Use: 4+</p>
+            <p class="personal-note">My go-to programming language—super user-friendly and versatile.</p>
+          </div>
+          <div class="skill-card" data-category="development">
+            <img src="/assets/images/software/c.svg" alt="C">
+            <p><strong>C</strong></p>
+            <p class="years-of-use">Years of Use: 3+</p>
+            <p class="personal-note">The mother of languages, which I mainly use for acceleration.</p>
+          </div>
+          <div class="skill-card" data-category="development">
+            <img src="/assets/images/software/c++.svg" alt="C++">
+            <p><strong>C++</strong></p>
+            <p class="years-of-use">Years of Use: 4+</p>
+            <p class="personal-note">I mainly use it with OpenFOAM.</p>
+          </div>
+          <div class="skill-card" data-category="development">
+            <img src="/assets/images/software/cuda.svg" alt="NVIDIA Cuda">
+            <p><strong>NVIDIA Cuda</strong></p>
+            <p class="years-of-use">Years of Use: 2+</p>
+            <p class="personal-note">Beyond gaming, NVIDIA shines with CUDA for acceleration.</p>
+          </div>
+          <div class="skill-card" data-category="development engineering">
+            <img src="/assets/images/software/matlab.svg" alt="Matlab">
+            <p><strong>Matlab</strong></p>
+            <p class="years-of-use">Years of Use: 3+</p>
+            <p class="personal-note">My go-to as a student, now replaced by Python.</p>
+          </div>
+          <div class="skill-card" data-category="development">
+            <img src="/assets/images/software/git.svg" alt="Git">
+            <p><strong>Git</strong></p>
+            <p class="years-of-use">Years of Use: 4+</p>
+            <p class="personal-note">The tool that keeps my code safe and organized.</p>
+          </div>
+          <div class="skill-card" data-category="development">
+            <img src="/assets/images/software/github.svg" alt="Github">
+            <p><strong>GitHub</strong></p>
+            <p class="years-of-use">Years of Use: 4+</p>
+            <p class="personal-note">Like Git, but remote and collaborative./p>
+          </div>
+          <div class="skill-card" data-category="development">
+            <img src="/assets/images/software/sublime.svg" alt="Sublime Text" >
+            <p><strong>Sublime Text</strong></p>
+            <p class="years-of-use">Years of Use: 6+</p>
+            <p class="personal-note">If it could play music, I’d use it for that too!</p>
+          </div>
+
+          <!-- Documentation -->
+          <div class="skill-card" data-category="documentation">
+            <img src="/assets/images/software/latex.svg" alt="LaTeX">
+            <p><strong>LaTeX</strong></p>
+            <p class="years-of-use">Years of Use: 6+</p>
+            <p class="personal-note">The tool that helps me create professional documents.</p>
+          </div>
+        <div class="skill-card" data-category="documentation">
+            <img src="/assets/images/software/overleaf.svg" alt="Overleaf">
+            <p><strong>Overleaf</strong></p>
+            <p class="years-of-use">Years of Use: 4+</p>
+            <p class="personal-note">My favorite for collaborative LaTeX editing.</p>
+          </div>
+          <div class="skill-card" data-category="documentation">
+            <img src="/assets/images/software/illustrator.svg" alt="Illustrator">
+            <p><strong>Illustrator</strong></p>
+            <p class="years-of-use">Years of Use: 3+</p>
+            <p class="personal-note">My go-to for vector design, though not free.</p>
+          </div>
+        <div class="skill-card" data-category="development">
+            <img src="/assets/images/software/office.svg" alt="Office 365">
+            <p><strong>Office 365</strong></p>
+            <p class="years-of-use">Years of Use: 8+</p>
+            <p class="personal-note">Switched to free options, except for Teams, Outlook, and a bit of PowerPoint.</p>
+          </div>
+
+          <!-- Operating Systems -->
+          <div class="skill-card" data-category="os">
+            <img src="/assets/images/software/linux.svg" alt="Linux">
+            <p><strong>Linux</strong></p>
+            <p class="years-of-use">Years of Use: 6+</p>
+            <p class="personal-note">My OS for everything I do.</p>
+          </div>
+          <div class="skill-card" data-category="os">
+            <img src="/assets/images/software/windows11.svg" alt="Windows 11">
+            <p><strong>Windows 11</strong></p>
+            <p class="years-of-use">Years of Use: 10+</p>
+            <p class="personal-note">I do everything on Linux—oh, and Windows? That’s for games!</p>
+          </div>
+
         </div>
+      </div>
     </div>
+
 
     <div class="full-width-box full-width-box-secondary">
         <h2> Certifications</h2>
@@ -226,7 +376,10 @@ permalink: /pages/about/
             </div>  
         </div>
     </div>
+
+
 </div>
+
 
 <!--
 
