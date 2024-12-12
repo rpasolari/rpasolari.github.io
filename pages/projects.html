@@ -5,6 +5,14 @@ permalink: /pages/projects/
 ---
 
 <style>  
+
+
+.cards-container a {
+  display: flex; 
+  flex: 0 1 auto; 
+  text-decoration: none;
+  color: inherit; 
+}
 .project-card {
     background: #fff; /* White background */
     border: 1px solid #ddd; /* Light border */
@@ -15,6 +23,8 @@ permalink: /pages/projects/
     text-align: left;
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative; /* For positioning the title */
+    display: flex; /* Enable flexbox layout */
+    flex-direction: column; /* Stack children vertically */
 }
 
 .project-card:hover {
@@ -36,11 +46,11 @@ permalink: /pages/projects/
 
 .project-card img {
     display: block;
-    width: 100%; /* Responsive image */
-    max-height: 200px; /* Set a max height */
-    object-fit: cover; /* Maintain aspect ratio and crop if necessary */
-    margin: 20px 0; /* Space around the image */
-    border-radius: 8px; /* Optional rounded corners */
+    max-width: 100%;
+    height: 200px;
+    width: auto;
+    margin: 40px auto; /* Space around the image */
+    border-radius: 2px; /* Optional rounded corners */
 }
 
 .project-card .about {
@@ -53,7 +63,8 @@ permalink: /pages/projects/
     font-size: 0.9em;
     color: #0056b3; /* Blue color for skills */
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: auto;
+    display: inline-block;
     display: flex;
     flex-wrap: wrap; /* Wrap skills in multiple lines */
     gap: 5px; /* Space between skills */
@@ -66,8 +77,31 @@ permalink: /pages/projects/
     border-radius: 4px;
     font-size: 0.85em;
 }
-}
 </style>
+
+<script>
+function filterCards(category) {
+  const cards = document.querySelectorAll('.project-card');
+  const buttons = document.querySelectorAll('.filter-btn');
+
+  // Reset active button
+  buttons.forEach((btn) => btn.classList.remove('active'));
+
+  // Set active button
+  event.currentTarget.classList.add('active');
+
+  // Show or hide cards
+  cards.forEach((card) => {
+    if (category === 'all' || card.dataset.category.split(' ').includes(category)) {
+      card.style.visibility = 'visible';
+      card.style.position = 'relative';
+    } else {
+      card.style.visibility = 'hidden';
+      card.style.position = 'absolute';
+    }
+  });
+}
+</script>
 
 <div class="content-container">
 
@@ -81,64 +115,94 @@ permalink: /pages/projects/
         </div>
     </div>
 
-    <!-- Project 1 -->
-    <div class="full-width-box full-width-box-secondary">
+    <div class="full-width-box full-width-box-primary">
+      <div class="filter-menu">
+        <button class="filter-btn active" onclick="filterCards('all')">All</button>
+        <button class="filter-btn" onclick="filterCards('simulation')">Simulations</button>
+        <button class="filter-btn" onclick="filterCards('code')">Codes</button>
+        <button class="filter-btn" onclick="filterCards('other')">Others</button>
+      </div>
         <div class="inner-content">
-            <div class="cards-container" style="align-items: flex-start;">
-                <div class="project-card">
-                    <div class="title">FE-DBD Plasma Reactor</div>
-                    <img src="/assets/images/projects.png" alt="Project Image">
+            <div class="cards-container" >
+                <a href="/pages/projects/plasma_reactor/">
+                <div class="project-card" data-category="simulation">
+                    <div class="title">DBD Plasma Reactor</div>
+                    <img src="/assets/images/projects/plasma_reactor/max_plasma_temperature.png" alt="Project Image">
                     <p class="about">
-                        A brief description of the project goes here. Keep it concise and to the point.
-                        A brief description of the project goes here. Keep it concise and to the point.
-                        A brief description of the project goes here. Keep it concise and to the point.
+                        CFD analysis with thermal effects on a Dielectric Barrier Discharge plasma reactor designed for sewage sludge decontamination. Utilizing the chtMultiRegionFoam solver in OpenFOAM, the simulation aimed to measure the temperature rise in the sludge caused by plasma discharge, ensuring that decontamination was achieved due to plasma effects rather than elevated temperatures.
                     </p>
                     <div class="skills">
                         <span>OpenFOAM</span>
-                        <span>CHTMultiRegion</span>
+                        <span>chtMultiRegion</span>
                         <span>Heat Transfer</span>
-                        <span>Python</span>
+                        <span>Cold Plasma</span>
+                        <span>Decontamination</span>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="title">Project Title</div>
-                    <img src="/assets/images/projects.jpg" alt="Project Image">
+                </a>
+                <a href="/pages/projects/hydrogen_plasma/">
+                <div class="project-card" data-category="code">
+                    <div class="title">Two-fluid model for Hydrogen plasma</div>
+                    <img src="/assets/images/projects/hydrogen_plasma/debye_probes.png" alt="Project Image">
                     <p class="about">
-                        A brief description of the project goes here. Keep it concise and to the point.
+                        Development of a 0-D steady-state model for cold Hydrogen plasma, in the pressure limits of 10-60 Torr. The code solves six balance equations for the six different species participating inm the discharge, and an energy equation for the determination of the gas' temperature. The code has been developed in Fortran 2008, and all the parameters are gained by the freeware BOLSIG+.
                     </p>
                     <div class="skills">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>Python</span>
+                        <span>Hydrogen plasma</span>
+                        <span>Cold Plasma</span>
+                        <span>Low-pressure plasma</span>
+                        <span>Fortran 2008</span>
+                        <span>Two-fluid model</span>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="title">Project Title</div>
-                    <img src="/assets/images/projects.jpg" alt="Project Image">
+                </a>
+                <a href="/pages/projects/static_stall_hybrid/">
+                <div class="project-card" data-category="simulation">
+                    <div class="title">Static airfoil stall</div>
+                    <img src="/assets/images/projects/static_stall_hybrid/contours.png" alt="Project Image">
                     <p class="about">
-                        A brief description of the project goes here. Keep it concise and to the point.
+                        Development of a 0-D steady-state model for cold Hydrogen plasma, in the pressure limits of 10-60 Torr. The code solves six balance equations for the six different species participating inm the discharge, and an energy equation for the determination of the gas' temperature. The code has been developed in Fortran 2008, and all the parameters are gained by the freeware BOLSIG+.
                     </p>
                     <div class="skills">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>Python</span>
+                        <span>Hydrogen plasma</span>
+                        <span>Cold Plasma</span>
+                        <span>Low-pressure plasma</span>
+                        <span>Fortran 2008</span>
+                        <span>Two-fluid model</span>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="title">Project Title</div>
-                    <img src="/assets/images/projects.jpg" alt="Project Image">
+                </a>
+                <a href="/pages/projects/dynamic_stall_hybrid/">
+                <div class="project-card" data-category="simulation">
+                    <div class="title">Dynamic airfoil stall</div>
+                    <img src="/assets/images/projects/dynamic_stall_hybrid/hysterisis_loop.png" alt="Project Image">
                     <p class="about">
-                        A brief description of the project goes here. Keep it concise and to the point.
+                        Development of a 0-D steady-state model for cold Hydrogen plasma, in the pressure limits of 10-60 Torr. The code solves six balance equations for the six different species participating inm the discharge, and an energy equation for the determination of the gas' temperature. The code has been developed in Fortran 2008, and all the parameters are gained by the freeware BOLSIG+.
                     </p>
                     <div class="skills">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>Python</span>
+                        <span>Hydrogen plasma</span>
+                        <span>Cold Plasma</span>
+                        <span>Low-pressure plasma</span>
+                        <span>Fortran 2008</span>
+                        <span>Two-fluid model</span>
                     </div>
                 </div>
+                </a>
+
+                <a href="/">
+                <div class="project-card" data-category="other">
+                    <div class="title">Personal Website</div>
+                    <img src="/assets/images/projects/personal_website/avatar.png" alt="Project Image">
+                    <p class="about">
+                        Development of a 0-D steady-state model for cold Hydrogen plasma, in the pressure limits of 10-60 Torr. The code solves six balance equations for the six different species participating inm the discharge, and an energy equation for the determination of the gas' temperature. The code has been developed in Fortran 2008, and all the parameters are gained by the freeware BOLSIG+.
+                    </p>
+                    <div class="skills">
+                        <span>html</span>
+                        <span>css</span>
+                        <span>java-scrtipt</span>
+                    </div>
+                </div>
+                </a>
             </div>
         </div>
     </div>
