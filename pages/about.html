@@ -12,11 +12,46 @@ permalink: /pages/about/
     .listing-header {
         display: flex;
         justify-content: space-between;
+        cursor : pointer;
         align-items: center;
         margin-bottom: 10px;
-        border-left: 6px solid var(--secondary-color);
+        border-left: 0px solid var(--line-dark-color);
         position: relative; 
         padding-left: 10px;
+    }
+
+    .listing-content {
+      overflow: hidden;
+      max-height: 0;
+      padding: 0 15px;
+      background-color: var(--body-background-color);
+      border-left: 20px solid var(--line-dark-color);
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .listing-header .arrow {
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .listing-header.open .arrow {
+      transform: rotate(90deg);
+    }
+
+    /* Override for no-space: Align title and arrow next to each other */
+    .listing-header.no-space {
+        justify-content: flex-start; /* Align everything to the left */
+        gap: 10px; /* Add space between title and arrow */
+    }
+
+    .listing-header.no-space .listing-title {
+        flex-grow: 0; /* Prevent title from stretching */
+    }
+
+    .listing-content ul {
+      margin: 10px 0;
+      padding: 0;
+      list-style: none;
     }
 
     .listing-title {
@@ -32,6 +67,7 @@ permalink: /pages/about/
 
     .listing-details div {
         margin-bottom: 5px;
+        padding-left: 15px;
     }
 
     .university {
@@ -58,6 +94,7 @@ permalink: /pages/about/
 
     .dissertation-section ul li {
         margin-bottom: 8px;
+        padding-left: 6px;
     }
 
     .dissertation-title {
@@ -129,7 +166,71 @@ function filterCards(category) {
         </div> 
     </div>
 
-    <div class="full-width-box full-width-box-secondary">
+    <div class="full-width-box full-width-box-primary">
+        <div class="inner-content inner-content-left">
+        <section class="my-journey">
+            <h3 style=" text-align: center;">~ My journey ~</h3>
+            <p>
+                I was born in Albania, in a small village in the south of the country. However, when I was just two years old, my family moved to Greece, settling in Neapoli Lakonias, a charming town in the southeast of mainland Greece. This is the place where I grew up, attended school, and continue to call home during the holidays.
+            </p>
+            <p>
+                My academic journey began in Patras, Greece, where I pursued studies in Mechanical Engineering and Aeronautics. I spent six enriching years there, completing both my MEng and MSc degrees in the same department. 
+            </p>
+            <p>
+                Following this, I was accepted by TU Delft in the Netherlands to pursue a PhD. Now, I find myself in the final stages of this incredible journey, eagerly awaiting my defense and reflecting on the path that brought me here.
+            </p>
+        </section>
+
+        <section class="section-mechanical-engineering">
+            <h3 style=" text-align: center;">~ Discovering Computational Mechanics ~</h3>
+            <p>
+                During the third year of my MEng studies, I discovered my fascination for Computational Mechanics. I was immediately drawn to courses like Finite Elements, Computational Methods, Fluid Mechanics, Thermodynamics, and Heat Transfer. These subjects resonated with me, as they offered the perfect opportunity to apply the beautiful concepts we had learned in Mathematics courses to solve real-world problems.
+            </p>
+            <p>
+                My enthusiasm for this field deepened in the fourth year of my studies, thanks to a professor who introduced me to the world of Computational Fluid Dynamics (CFD). Since then, I have been passionate about CFD—exploring applied cases, developing solvers, learning new software, and writing my own code to run simulations. This passion for computational physics has shaped my academic and professional journey, fueling my drive to innovate and contribute to this ever-evolving field.
+            </p>
+        </section>
+
+        <section class="section-computers">
+            <h3 style=" text-align: center;">~ Optimizing Through Understanding ~</h3>
+            <p>
+                Through my years of working with CFD, I have realized the tremendous power and potential of computers in solving complex problems. This understanding has driven me to delve deeper into computer science, not only to develop my own codes but also to make them more efficient and optimized for performance.
+            </p>
+            <p>
+                I am particularly intrigued by exploring the capabilities of CPUs and GPUs and understanding the processes that occur when running a code. Gaining insights into these interactions between hardware and software enables engineers to better comprehend and improve their tools. I believe that this foundational knowledge is essential for creating optimized and effective solutions in engineering.
+            </p>
+        </section>
+
+        <section class="section-open-source">
+            <h3 style=" text-align: center;">~ Open Science and Open Source ~</h3>
+            <p>
+                I am deeply passionate about open science because I firmly believe that knowledge should be accessible to everyone. Making research and findings available to the global community is not only beneficial for advancing science but also for creating a better, more equitable world. As Stephen Jay Gould once said: 
+            </p>
+            <blockquote>
+                "I am, somehow, less interested in the weight and convolutions of Einstein’s brain than in the near certainty that people of equal talent have lived and died in cotton fields and sweatshops."
+            </blockquote>
+            <p>
+                I wholeheartedly agree with this perspective. Providing access to knowledge and opportunities ensures that talent and potential can flourish, regardless of one’s circumstances.
+            </p>
+            <p>
+                Similarly, I am passionate about open-source tools and initiatives. Open source empowers individuals from diverse backgrounds to collaborate and contribute to collective progress. The ability for people to build on each other’s work and ideas is a powerful driver of innovation. The continuous evolution of open-source technology is indispensable, not only for science and engineering but for society as a whole.
+            </p>
+        </section>
+
+        <section class="section-collaboration">
+            <h3 style=" text-align: center;">~ Open for collaboration ~</h3>
+            <p>
+                I am always open to new ideas, discussions, and collaborations. Whether you want to brainstorm, share insights, or work on an exciting project together, I would be delighted to hear from you. Collaboration drives innovation, and I believe that great things happen when people with diverse perspectives and expertise come together.
+            </p>
+            <p>
+                Feel free to <a href="#footer">reach out to me</a>—I look forward to connecting with like-minded individuals and exploring new opportunities. You can find my email and links to other platforms at the bottom of this page.
+            </p>
+        </section>
+
+        </div>
+    </div>
+
+    <div class="full-width-box full-width-box-primary">
       <h2> Education</h2>
       <div class="inner-content inner-content-left">
             <div class="listing-item">
@@ -189,8 +290,54 @@ function filterCards(category) {
       </div>
     </div>
 
+    <div class="full-width-box full-width-box-secondary">
+      <h2>Professional Engagements</h2>
+      <div class="inner-content inner-content-left">
+        
+        <div class="listing-item">
+          <div class="listing-header no-space" onclick="toggleContent(this)">
+            <span class="listing-title">Student Supervision and Mentorship</span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="listing-content">
+            <ul>
+              <li>Supervised a Bachelor Honors Program student, providing project guidance and daily supervision at TU Delft (2024).</li>
+              <li>Supervised two Bachelor groups of 10 students each for the Design/Synthesis Exercise at TU Delft (2022 and 2023).</li>
+              <li>Supervised a MSc student during his thesis work at TU Delft (2023).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="listing-item">
+          <div class="listing-header no-space" onclick="toggleContent(this)">
+            <span class="listing-title">Event Organization</span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="listing-content">
+            <ul>
+              <li>Co-organized the OpenFOAM PhD event by the Dutch OpenFOAM user group at TU Delft from 2022 to 2024. <a href="https://www.tudelft.nl/evenementen/2023/dcse/openfoam-6-july-2023" target="_blank">View Event Details</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="listing-item">
+          <div class="listing-header no-space" onclick="toggleContent(this)">
+            <span class="listing-title">Peer Review Contributions</span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="listing-content">
+            <ul>
+              <li>Served as a reviewer for the peer-review process in the *Physics of Fluids* journal. <a href="https://pubs.aip.org/aip/pof" target="_blank">View Journal</a></li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+
     <div class="full-width-box full-width-box-primary">
-      <h2>Skills</h2>
+      <h2>Skills & Software</h2>
       <div class="filter-menu">
         <button class="filter-btn active" onclick="filterCards('all')">All</button>
         <button class="filter-btn" onclick="filterCards('engineering')">Engineering & Simulation</button>
@@ -376,6 +523,8 @@ function filterCards(category) {
             </div>  
         </div>
     </div>
+
+
 
 
 </div>

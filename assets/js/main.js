@@ -52,3 +52,16 @@ function toggleSection(header) {
     }
 }
 
+// --------------------------------------------------------------------
+
+function toggleContent(header) {
+  const content = header.nextElementSibling;
+  const isOpen = header.classList.toggle('open');
+  
+  if (isOpen) {
+    content.style.maxHeight = content.scrollHeight + "px"; // Smoothly expand
+    header.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); // Adjust view
+  } else {
+    content.style.maxHeight = 0; // Smoothly collapse
+  }
+}

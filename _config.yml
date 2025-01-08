@@ -14,8 +14,8 @@ menu:
     url: /pages/publications/
   - title: Projects
     url: /pages/projects/
-  - title: Contact
-    url: /pages/contact 
+  # - title: Contact
+  #   url: /pages/contact 
 
 exclude_from_breadcrumbs:
   - pages

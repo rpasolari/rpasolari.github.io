@@ -99,6 +99,12 @@ a:hover {
   text-decoration: None;
 }
 
+section {
+    margin: 0 auto; /* Centers the content */
+    padding: 0rem; /* Provides consistent internal spacing */
+    max-width: var(--main-max-width); /* Respects the main width variable */
+}
+
 .content-container {
     display: flex; /* Enables flexible layout inside the container */
     flex-direction: column; /* Stacks children vertically */
