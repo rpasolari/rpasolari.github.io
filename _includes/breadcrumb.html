@@ -17,7 +17,6 @@
         {% continue %}
       {% endif %}
       
-
       {% if first_part %}
         {% assign first_part = false %}
         {% assign current_path = "/" | append: part %} 
@@ -27,8 +26,15 @@
       {% endif %}
       
       <span>
-        <a href="{{ current_path | relative_url }}">{{ part | capitalize }}</a> 
+        {% if current_path == page.url %}
+          <!-- Use the page title if it's the current page -->
+          <a href="{{ current_path | relative_url }}">{{ page.title }}</a>
+        {% else %}
+          <!-- Fallback to using the URL part -->
+          <a href="{{ current_path | relative_url }}">{{ part | capitalize }}</a>
+        {% endif %}
       </span>
+      
     {% endfor %}
     
   {% endif %}

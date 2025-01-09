@@ -65,3 +65,26 @@ function toggleContent(header) {
     content.style.maxHeight = 0; // Smoothly collapse
   }
 }
+
+
+function filterCards(category) {
+  const cards = document.querySelectorAll('.skill-card');
+  const buttons = document.querySelectorAll('.filter-btn');
+
+  // Reset active button
+  buttons.forEach((btn) => btn.classList.remove('active'));
+
+  // Set active button
+  event.currentTarget.classList.add('active');
+
+  // Show or hide cards
+  cards.forEach((card) => {
+    if (category === 'all' || card.dataset.category.split(' ').includes(category)) {
+      card.style.visibility = 'visible';
+      card.style.position = 'relative';
+    } else {
+      card.style.visibility = 'hidden';
+      card.style.position = 'absolute';
+    }
+  });
+}

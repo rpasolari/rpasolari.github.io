@@ -12,7 +12,7 @@ permalink: /pages/about/
     .listing-header {
         display: flex;
         justify-content: space-between;
-        cursor : pointer;
+        
         align-items: center;
         margin-bottom: 10px;
         border-left: 0px solid var(--line-dark-color);
@@ -24,7 +24,7 @@ permalink: /pages/about/
       overflow: hidden;
       max-height: 0;
       padding: 0 15px;
-      background-color: var(--body-background-color);
+      background-color: var(--second-body-background-color);
       border-left: 20px solid var(--line-dark-color);
       transition: max-height 0.3s ease, padding 0.3s ease;
     }
@@ -42,6 +42,7 @@ permalink: /pages/about/
     .listing-header.no-space {
         justify-content: flex-start; /* Align everything to the left */
         gap: 10px; /* Add space between title and arrow */
+        cursor : pointer;
     }
 
     .listing-header.no-space .listing-title {
@@ -127,74 +128,52 @@ permalink: /pages/about/
 
 </style>
 
-<script>
-function filterCards(category) {
-  const cards = document.querySelectorAll('.skill-card');
-  const buttons = document.querySelectorAll('.filter-btn');
-
-  // Reset active button
-  buttons.forEach((btn) => btn.classList.remove('active'));
-
-  // Set active button
-  event.currentTarget.classList.add('active');
-
-  // Show or hide cards
-  cards.forEach((card) => {
-    if (category === 'all' || card.dataset.category.split(' ').includes(category)) {
-      card.style.visibility = 'visible';
-      card.style.position = 'relative';
-    } else {
-      card.style.visibility = 'hidden';
-      card.style.position = 'absolute';
-    }
-  });
-}
-</script>
 
 
 <div class="content-container">
 
     
     <div class="section-with-image-right">
-
         <div class="text">
             <h1 style=" text-align: center;">About</h1>
-            <p>Hi there! I’m a Mechanical Engineer with both MEng and MSc degrees from the Mechanical Engineering and Aeronautics Department at the University of Patras in Greece. These days, I’m diving deep into my PhD at the Aerospace Faculty of TU Delft in the Netherlands. My research focuses on developing a two-dimensional hybrid Eulerian-Lagrangian solver aimed at tackling external aerodynamics challenges.</p>
+            <p>I am a CFD Engineer with expertise in CFD methodology and development. With a background in Mechanical and Aeronautical Engineering, I am currently completing my Ph.D. at the Aerospace Faculty of TU Delft in the Netherlands. My research focuses on the development of a hybrid Eulerian-Lagrangian solver to address challenges in external aerodynamics.
+
+            Here, you can explore more about me, my background, professional journey, interests, and much more.
+            </p>
         </div>   
         <div class="image">
             <img src="/assets/images/avatar.png" alt="Avatar">
         </div> 
     </div>
 
-    <div class="full-width-box full-width-box-primary">
+    <div class="full-width-box full-width-box-secondary">
         <div class="inner-content inner-content-left">
         <section class="my-journey">
             <h3 style=" text-align: center;">~ My journey ~</h3>
             <p>
-                I was born in Albania, in a small village in the south of the country. However, when I was just two years old, my family moved to Greece, settling in Neapoli Lakonias, a charming town in the southeast of mainland Greece. This is the place where I grew up, attended school, and continue to call home during the holidays.
+                I was born in Albania, in a small village in the south of the country. However, when I was just two years old, my family moved to Greece, settling in Neapoli Lakonias, a charming town in the south of mainland Greece. This is the place where I grew up, attended school, and continue to call home during the holidays.
             </p>
             <p>
-                My academic journey began in Patras, Greece, where I pursued studies in Mechanical Engineering and Aeronautics. I spent six enriching years there, completing both my MEng and MSc degrees in the same department. 
+                My academic journey began in Patras, Greece, where I pursued studies in Mechanical Engineering and Aeronautics. I spent six enriching years there, completing both my M.Eng. and M.Sc. degrees in the same department. 
             </p>
             <p>
-                Following this, I was accepted by TU Delft in the Netherlands to pursue a PhD. Now, I find myself in the final stages of this incredible journey, eagerly awaiting my defense and reflecting on the path that brought me here.
+                Following this, I was accepted by TU Delft in the Netherlands to pursue a Ph.D. Now, I find myself in the final stages of this journey, eagerly awaiting my defense.
             </p>
         </section>
 
         <section class="section-mechanical-engineering">
             <h3 style=" text-align: center;">~ Discovering Computational Mechanics ~</h3>
             <p>
-                During the third year of my MEng studies, I discovered my fascination for Computational Mechanics. I was immediately drawn to courses like Finite Elements, Computational Methods, Fluid Mechanics, Thermodynamics, and Heat Transfer. These subjects resonated with me, as they offered the perfect opportunity to apply the beautiful concepts we had learned in Mathematics courses to solve real-world problems.
-            </p>
+                During the third year of my M.Eng. studies, I discovered my fascination for Computational Mechanics. Courses like Finite Elements, Computational Methods, Fluid Mechanics, Thermodynamics, and Heat Transfer sparked my interest in the field and made me passionate about it.
             <p>
-                My enthusiasm for this field deepened in the fourth year of my studies, thanks to a professor who introduced me to the world of Computational Fluid Dynamics (CFD). Since then, I have been passionate about CFD—exploring applied cases, developing solvers, learning new software, and writing my own code to run simulations. This passion for computational physics has shaped my academic and professional journey, fueling my drive to innovate and contribute to this ever-evolving field.
+                My enthusiasm for this field deepened in the fourth year of my studies, thanks to a professor who introduced me to the world of Computational Fluid Dynamics (CFD). Since then, I have been passionate about CFD—exploring applied cases, developing solvers, learning new software, and writing my own code to run simulations.
             </p>
         </section>
 
         <section class="section-computers">
             <h3 style=" text-align: center;">~ Optimizing Through Understanding ~</h3>
             <p>
-                Through my years of working with CFD, I have realized the tremendous power and potential of computers in solving complex problems. This understanding has driven me to delve deeper into computer science, not only to develop my own codes but also to make them more efficient and optimized for performance.
+                Through my years of working with CFD, I have realized the incredible power and potential of computers in solving complex problems. This understanding has driven me to delve deeper into computer science, not only to develop my own codes but also to make them more efficient and optimized for performance.
             </p>
             <p>
                 I am particularly intrigued by exploring the capabilities of CPUs and GPUs and understanding the processes that occur when running a code. Gaining insights into these interactions between hardware and software enables engineers to better comprehend and improve their tools. I believe that this foundational knowledge is essential for creating optimized and effective solutions in engineering.
@@ -202,28 +181,27 @@ function filterCards(category) {
         </section>
 
         <section class="section-open-source">
-            <h3 style=" text-align: center;">~ Open Science and Open Source ~</h3>
+            <h3 style="text-align: center;">~ Open Science and Open Source ~</h3>
             <p>
-                I am deeply passionate about open science because I firmly believe that knowledge should be accessible to everyone. Making research and findings available to the global community is not only beneficial for advancing science but also for creating a better, more equitable world. As Stephen Jay Gould once said: 
+                I value the principles of open science because I believe that making knowledge accessible to everyone can benefit both the scientific community and society. When feasible, sharing research and findings openly contributes to advancing science and creating opportunities for collaboration. As Stephen Jay Gould once said:
             </p>
             <blockquote>
                 "I am, somehow, less interested in the weight and convolutions of Einstein’s brain than in the near certainty that people of equal talent have lived and died in cotton fields and sweatshops."
             </blockquote>
             <p>
-                I wholeheartedly agree with this perspective. Providing access to knowledge and opportunities ensures that talent and potential can flourish, regardless of one’s circumstances.
-            </p>
+                Providing access to knowledge, when possible, ensures that talent and potential are not limited by circumstances.
             <p>
-                Similarly, I am passionate about open-source tools and initiatives. Open source empowers individuals from diverse backgrounds to collaborate and contribute to collective progress. The ability for people to build on each other’s work and ideas is a powerful driver of innovation. The continuous evolution of open-source technology is indispensable, not only for science and engineering but for society as a whole.
+                Similarly, I appreciate the impact of open-source tools and initiatives. Open source empowers individuals from diverse backgrounds to collaborate and contribute to collective progress. The ability for people to build on each other’s work and ideas is a powerful driver of innovation. 
             </p>
         </section>
 
         <section class="section-collaboration">
             <h3 style=" text-align: center;">~ Open for collaboration ~</h3>
             <p>
-                I am always open to new ideas, discussions, and collaborations. Whether you want to brainstorm, share insights, or work on an exciting project together, I would be delighted to hear from you. Collaboration drives innovation, and I believe that great things happen when people with diverse perspectives and expertise come together.
+                I am always open to new ideas, discussions, and collaborations. Whether you want to brainstorm, share insights, or work on an exciting project together, I would be delighted to hear from you.
             </p>
             <p>
-                Feel free to <a href="#footer">reach out to me</a>—I look forward to connecting with like-minded individuals and exploring new opportunities. You can find my email and links to other platforms at the bottom of this page.
+                Feel free to <a href="#footer">reach out to me</a>. You can find my email and links to other platforms at the bottom of this page.
             </p>
         </section>
 
@@ -301,7 +279,7 @@ function filterCards(category) {
           </div>
           <div class="listing-content">
             <ul>
-              <li>Supervised a Bachelor Honors Program student, providing project guidance and daily supervision at TU Delft (2024).</li>
+              <li>Supervised a Bachelor Honours Program student, providing project guidance and daily supervision at TU Delft (2024).</li>
               <li>Supervised two Bachelor groups of 10 students each for the Design/Synthesis Exercise at TU Delft (2022 and 2023).</li>
               <li>Supervised a MSc student during his thesis work at TU Delft (2023).</li>
             </ul>
@@ -414,7 +392,7 @@ function filterCards(category) {
             <img src="/assets/images/software/github.svg" alt="Github">
             <p><strong>GitHub</strong></p>
             <p class="years-of-use">Years of Use: 4+</p>
-            <p class="personal-note">Like Git, but remote and collaborative./p>
+            <p class="personal-note">Like Git, but remote and collaborative.</p>
           </div>
           <div class="skill-card" data-category="development">
             <img src="/assets/images/software/sublime.svg" alt="Sublime Text" >
@@ -491,28 +469,28 @@ function filterCards(category) {
                     <a href="https://cfd.direct/openfoam-training/programming-cfd/" target="_blank" class="btn">View Page</a>
                 </div>
                 <div class="card">
+                    <h4> Turbulence</h4>
+                    <p><strong>Issued by:</strong> J.M. Burgerscentrum School for Fluid Mechanics - 2022</p>
+                    <p>Training in the fundamentals of turbulence, covering classical turbulence theory, experimental methods, and numerical simulations, providing a comprehensive understanding of turbulent flows.</p>
+                    <a href="https://dutw1479.wbmt.tudelft.nl/~renep/jmbcturbulencecourse2022/?utm_source=chatgpt.com" target="_blank" class="btn">View Page</a>
+                </div>
+                <div class="card">
                     <h4> Programming on the GPU with CUDA </h4>
-                    <p><strong>Issued by:</strong> DCSE TU Delft - 2023</p>
+                    <p><strong>Issued by:</strong> DCSE TU Delft - 2021</p>
                     <p>Focused on GPU programming with NVIDIA's CUDA. Covers GPU architecture, parallel computing principles, and hands-on experience in developing high-performance applications.</p>
                     <a href="https://www.tudelft.nl/cse/education/courses/cuda-programming" target="_blank" class="btn">View Page</a>
                 </div>
                 <div class="card">
                     <h4> Introduction into Programming using MPI </h4>
-                    <p><strong>Issued by:</strong> DCSE TU Delft - 2023</p>
+                    <p><strong>Issued by:</strong> DCSE TU Delft - 2021</p>
                     <p>Focused on parallel programming with the Message Passing Interface (MPI). Covers parallel computing concepts, MPI communication routines, and hands-on experience in developing scalable applications for high-performance computing environments.</p>
                     <a href="https://www.tudelft.nl/evenementen/2021/dcse/introduction-into-programming-using-mpi?utm_source=chatgpt.com" target="_blank" class="btn">View Page</a>
                 </div>
                 <div class="card">
                     <h4> OpenFOAM General Programming</h4>
-                    <p><strong>Issued by:</strong> Von Karman Institute (VKI) - 2023</p>
+                    <p><strong>Issued by:</strong> Von Karman Institute (VKI) - 2021</p>
                     <p>Focused on implementing solvers, custom boundary conditions, turbulence models, and utilities within OpenFOAM, enhancing proficiency in templated language and linking methods for tailored CFD solutions.</p>
                     <a href="https://www.vki.ac.be/index.php/component/sppagebuilder/page/354" target="_blank" class="btn">View Page</a>
-                </div>
-                <div class="card">
-                    <h4> Turbulence</h4>
-                    <p><strong>Issued by:</strong> J.M. Burgerscentrum School for Fluid Mechanics - 2023</p>
-                    <p>Training in the fundamentals of turbulence, covering classical turbulence theory, experimental methods, and numerical simulations, providing a comprehensive understanding of turbulent flows.</p>
-                    <a href="https://dutw1479.wbmt.tudelft.nl/~renep/jmbcturbulencecourse2022/?utm_source=chatgpt.com" target="_blank" class="btn">View Page</a>
                 </div>
                 <div class="card">
                     <h4> The Complete FreeCAD Course 2024: From Zero to Expert!</h4>

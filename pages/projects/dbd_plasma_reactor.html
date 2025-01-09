@@ -1,0 +1,76 @@
+---
+layout: default
+title: DBD Plasma Reactor
+permalink: /pages/projects/dbd_plasma_reactor
+---
+
+<div class="content-container">
+
+    <h1>DBD Plasma Reactor</h1>
+
+    <!-- <img src="/assets/images/projects/plasma_reactor/max_plasma_temperature.png" alt="Project Image"> -->
+
+    <div class="full-width-box full-width-box-secondary">
+        <div class="inner-content inner-content-left">
+            <h2> Background</h2>
+            <p>
+            The interest in Cold Atmospheric Pressure Plasmas (CAPPs) has grown significantly due to their versatility in various engineering applications, such as aeronautics actuation, flow control, anti-icing, and soil remediation. One of the key advantages of CAPPs is their ability to operate at low temperatures with minimal energy requirements while maintaining high efficiency.
+            </p>
+
+            <p>
+            During my time at the University of Patras, our research team explored the use of cold plasma for the decontamination of the biological load in municipal solid waste. Specifically, we employed Dielectric Barrier Discharge (DBD) plasma, which proved to be highly effective. This approach was particularly beneficial because it maintained low temperatures, preventing the thermal degradation of the biosolid during treatment.
+            </p>
+
+            <p>
+            You can learn more about this work in the paper by <a href="https://doi.org/10.1016/j.scitotenv.2019.135940" target="_blank">Svarnas et al.</a>.
+            </p>
+        </div>
+    </div>
+
+    <div class="full-width-box full-width-box-primary">
+        <div class="inner-content inner-content-left">
+            <h2>Challenge description</h2>
+            <p>Evaluating the effectiveness of Cold Atmospheric Pressure Plasma (CAPP)-based remediation techniques requires both hands-on experiments and computational modeling. Experiments are crucial to defining practical operating conditions, while simulations offer insights into process parameters that are difficult to measure directly. These challenges often stem from the complexities of the gaseous-plasma phase, the solid material being treated, and their interaction, where traditional measurement methods may not be feasible.</p>
+
+            <p>For instance, techniques like optical emission spectroscopy, used to determine plasma properties such as temperature and density, can be disrupted by the presence of volatile compounds like water vapor produced during the treatment process. This underscores the need for simulations to bridge the gaps left by experimental limitations and provide a deeper understanding of the mechanisms involved.</p>
+
+            <h3 style="text-align: center;"></h3>
+        </div>
+    </div>
+
+    <div class="full-width-box full-width-box-secondary">
+        <div class="inner-content inner-content-left">
+            <h2>Our mission</h2>
+
+            <p>Our mission was to conduct a CFD analysis of the decontamination process inside the Dielectric Barrier Discharge (DBD) plasma reactor. The objective was to evaluate the fluid flow and thermal effects on the sewage sludge to ensure that the decontamination process was driven by the plasma and the associated chemical reactions, rather than by high temperatures.</p>
+
+            <p>A comprehensive investigation of such processes is computationally intensive, as it requires detailed simulations of plasma kinetics and the incorporation of numerous chemical models. Additionally, the timescales for these phenomena are on the order of nanoseconds, making full-scale simulations particularly challenging. For this reason, such studies are often limited to 2D simulations to reduce computational costs.</p>
+
+            <p>In our approach, however, we employed a macroscopic treatment, focusing solely on fluid and thermal effects. This method was chosen because macroscopic phenomena operate on timescales of milliseconds, allowing simulations to cover several minutes—matching the duration of the experimental observations. This strategy provided valuable insights while maintaining computational feasibility.</p>
+        </div>
+    </div>
+
+    <div class="full-width-box full-width-box-primary">
+        <div class="inner-content inner-content-left">
+            <h2>Methodology</h2>
+            OpenFOAM
+            CHTMultiRegionSolver
+            Mesh in snappyHexMesh
+            EHD Force
+            Turbulence
+        </div>
+    </div>
+
+    <div class="full-width-box full-width-box-secondary">
+        <div class="inner-content inner-content-left">
+            <h2>Results and Discussion</h2>
+            Flow field
+            Temperature Field
+            Comparison with Experiments in two probes
+
+            For more information go to the original papers : 
+        </div>
+    </div>
+
+</div>
+

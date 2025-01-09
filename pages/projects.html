@@ -5,117 +5,84 @@ permalink: /pages/projects/
 ---
 
 <style>  
+.skill-card {
+    width: 330px;
+    height: 450px;
+    position: relative;
 
-
-.cards-container a {
-  display: flex; 
-  flex: 0 1 auto; 
-  text-decoration: none;
-  color: inherit; 
-}
-.project-card {
-    background: #fff; /* White background */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 20px;
-    max-width: 350px; /* Slightly larger max width */
-    text-align: left;
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative; /* For positioning the title */
-    display: flex; /* Enable flexbox layout */
-    flex-direction: column; /* Stack children vertically */
 }
 
-.project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-.project-card .title {
-    position: absolute; /* Place the title at the top-left */
-    top: 10px;
-    left: 10px;
-    background-color: #0056b3; /* Dark blue background */
-    color: #fff; /* White text */
-    font-size: 1em;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 4px;
-}
-
-.project-card img {
+.skill-card img {
     display: block;
-    max-width: 100%;
-    height: 200px;
+    max-height: 200px;
+    max-width: 320px;
+    height: 140px;
     width: auto;
-    margin: 40px auto; /* Space around the image */
+    margin: 30px auto; /* Space around the image */
+    margin-bottom: 10px;
     border-radius: 2px; /* Optional rounded corners */
+
 }
 
-.project-card .about {
+.skill-card .title {
+  position: absolute; /* Position the title absolutely within .skill-card */
+  top: 10px;
+  left: 10px;
+  background-color: #0056b3; /* Background only covers the text */
+  color: #fff; /* White text color */
+  font-size: 1em; /* Adjust font size */
+  font-weight: bold; /* Bold text */
+  padding: 5px 10px; /* Padding for background and spacing */
+  border-radius: 4px; /* Rounded corners */
+}
+
+
+.skill-card .about {
     font-size: 0.9em; /* Slightly smaller font */
     color: #555; /* Subtle text color */
+    margin-top: ;
     margin-bottom: 10px;
 }
 
-.project-card .skills {
-    font-size: 0.9em;
-    color: #0056b3; /* Blue color for skills */
-    font-weight: bold;
-    margin-top: auto;
-    display: inline-block;
-    display: flex;
-    flex-wrap: wrap; /* Wrap skills in multiple lines */
+.skill-card .skills {
+    position: absolute; /* Fix .skills to the bottom of the card */
+    bottom: 10px; /* Space from the bottom edge */
+    left: 10px; /* Align to the left edge */
+    right: 10px; /* Align to the right edge */
+    font-size: 0.9em; /* Text size for skills */
+    color: #0056b3; /* Blue text */
+    font-weight: bold; /* Bold text */
+    display: flex; /* Use flexbox for skill alignment */
+    flex-wrap: wrap; /* Wrap skills in multiple lines if needed */
     gap: 5px; /* Space between skills */
+    justify-content: center; /* Center the skills horizontally */
 }
 
-.project-card .skills span {
+.skill-card .skills span {
     background-color: #e0f0ff; /* Light blue background for skills */
     color: #0056b3;
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 0.85em;
 }
+
 </style>
 
-<script>
-function filterCards(category) {
-  const cards = document.querySelectorAll('.project-card');
-  const buttons = document.querySelectorAll('.filter-btn');
 
-  // Reset active button
-  buttons.forEach((btn) => btn.classList.remove('active'));
-
-  // Set active button
-  event.currentTarget.classList.add('active');
-
-  // Show or hide cards
-  cards.forEach((card) => {
-    if (category === 'all' || card.dataset.category.split(' ').includes(category)) {
-      card.style.visibility = 'visible';
-      card.style.position = 'relative';
-    } else {
-      card.style.visibility = 'hidden';
-      card.style.position = 'absolute';
-    }
-  });
-}
-</script>
 
 <div class="content-container">
 
     <div class="section-with-image-right">
-        <div class="text">
+        <div class="text"> 
             <h1 style=" text-align: center;">Projects</h1>
-            <p>Here you can view all the collection of the projects I have worked on.</p>
+            <p>Here, you can explore a collection of my most important and recent projects. You can navigate through the projects, and for more information, feel free to check out the <a href="/pages/publications" class="cta-link">Publications page</a>.  If you have any questions or would like to discuss something, please feel free to <a href="#footer">reach out to me</a>! </p>
         </div>      
         <div class="image">
             <img src="/assets/images/projects.png" alt="Avatar">
         </div>
     </div>
 
-    <div class="full-width-box full-width-box-primary">
+    <div class="full-width-box full-width-box-secondary">
       <div class="filter-menu">
         <button class="filter-btn active" onclick="filterCards('all')">All</button>
         <button class="filter-btn" onclick="filterCards('simulation')">Simulations</button>
@@ -123,14 +90,12 @@ function filterCards(category) {
         <button class="filter-btn" onclick="filterCards('other')">Others</button>
       </div>
         <div class="inner-content">
-            <div class="cards-container" >
-                <a href="/pages/projects/plasma_reactor/">
-                <div class="project-card" data-category="simulation">
+            <div class="skills-grid" >
+                <div class="skill-card" data-category="simulation">
+                  <a href="/pages/projects/dbd_plasma_reactor" class="card-link">
                     <div class="title">DBD Plasma Reactor</div>
                     <img src="/assets/images/projects/plasma_reactor/max_plasma_temperature.png" alt="Project Image">
-                    <p class="about">
-                        CFD analysis with thermal effects on a Dielectric Barrier Discharge plasma reactor designed for sewage sludge decontamination. Utilizing the chtMultiRegionFoam solver in OpenFOAM, the simulation aimed to measure the temperature rise in the sludge caused by plasma discharge, ensuring that decontamination was achieved due to plasma effects rather than elevated temperatures.
-                    </p>
+                    <p class="about">CFD analysis with thermal effects on a Dielectric Barrier Discharge plasma reactor designed for sewage sludge decontamination. Utilizing the chtMultiRegionFoam solver in OpenFOAM, the simulation aimed to measure the temperature rise in the sludge caused by plasma discharge, ensuring that decontamination was achieved due to plasma effects rather than elevated temperatures.</p>
                     <div class="skills">
                         <span>OpenFOAM</span>
                         <span>chtMultiRegion</span>
@@ -138,71 +103,22 @@ function filterCards(category) {
                         <span>Cold Plasma</span>
                         <span>Decontamination</span>
                     </div>
+                  </a>
                 </div>
-                </a>
-                <a href="/pages/projects/hydrogen_plasma/">
-                <div class="project-card" data-category="code">
+                <div class="skill-card" data-category="code">
+                  <a href="/pages/projects/hydrogen_plasma/" class="card-link">
                     <div class="title">Two-fluid model for Hydrogen plasma</div>
-                    <img src="/assets/images/projects/hydrogen_plasma/debye_probes.png" alt="Project Image">
-                    <p class="about">
-                        Development of a 0-D steady-state model for cold Hydrogen plasma, in the pressure limits of 10-60 Torr. The code solves six balance equations for the six different species participating inm the discharge, and an energy equation for the determination of the gas' temperature. The code has been developed in Fortran 2008, and all the parameters are gained by the freeware BOLSIG+.
-                    </p>
+                     <img src="/assets/images/projects/hydrogen_plasma/debye_probes.png" alt="Project Image">
+                    <p class="about">Development of a 0-D steady-state model for cold Hydrogen plasma, in the pressure limits of 10-60 Torr. The code solves six balance equations for the six different species participating inm the discharge, and an energy equation for the determination of the gas' temperature. The code has been developed in Fortran 2008, and all the parameters are gained by the freeware BOLSIG+.</p>
                     <div class="skills">
                         <span>Hydrogen plasma</span>
                         <span>Cold Plasma</span>
-                        <span>Low-pressure plasma</span>
                         <span>Fortran 2008</span>
+                        <span>Low-pressure plasma</span>                       
                         <span>Two-fluid model</span>
                     </div>
+                  </a>
                 </div>
-                </a>
-                <a href="/pages/projects/static_stall_hybrid/">
-                <div class="project-card" data-category="simulation">
-                    <div class="title">Static airfoil stall</div>
-                    <img src="/assets/images/projects/static_stall_hybrid/contours.png" alt="Project Image">
-                    <p class="about">
-                        Development of a 0-D steady-state model for cold Hydrogen plasma, in the pressure limits of 10-60 Torr. The code solves six balance equations for the six different species participating inm the discharge, and an energy equation for the determination of the gas' temperature. The code has been developed in Fortran 2008, and all the parameters are gained by the freeware BOLSIG+.
-                    </p>
-                    <div class="skills">
-                        <span>Hydrogen plasma</span>
-                        <span>Cold Plasma</span>
-                        <span>Low-pressure plasma</span>
-                        <span>Fortran 2008</span>
-                        <span>Two-fluid model</span>
-                    </div>
-                </div>
-                </a>
-                <a href="/pages/projects/dynamic_stall_hybrid/">
-                <div class="project-card" data-category="simulation">
-                    <div class="title">Dynamic airfoil stall</div>
-                    <img src="/assets/images/projects/dynamic_stall_hybrid/hysterisis_loop.png" alt="Project Image">
-                    <p class="about">
-                        Development of a 0-D steady-state model for cold Hydrogen plasma, in the pressure limits of 10-60 Torr. The code solves six balance equations for the six different species participating inm the discharge, and an energy equation for the determination of the gas' temperature. The code has been developed in Fortran 2008, and all the parameters are gained by the freeware BOLSIG+.
-                    </p>
-                    <div class="skills">
-                        <span>Hydrogen plasma</span>
-                        <span>Cold Plasma</span>
-                        <span>Low-pressure plasma</span>
-                        <span>Fortran 2008</span>
-                        <span>Two-fluid model</span>
-                    </div>
-                </div>
-                </a>
-
-                <a href="/">
-                <div class="project-card" data-category="other">
-                    <div class="title">Personal Website</div>
-                    <img src="/assets/images/projects/personal_website/avatar.png" alt="Project Image">
-                    <p class="about">
-                        Development of a 0-D steady-state model for cold Hydrogen plasma, in the pressure limits of 10-60 Torr. The code solves six balance equations for the six different species participating inm the discharge, and an energy equation for the determination of the gas' temperature. The code has been developed in Fortran 2008, and all the parameters are gained by the freeware BOLSIG+.
-                    </p>
-                    <div class="skills">
-                        <span>html</span>
-                        <span>css</span>
-                        <span>java-scrtipt</span>
-                    </div>
-                </div>
-                </a>
             </div>
         </div>
     </div>
