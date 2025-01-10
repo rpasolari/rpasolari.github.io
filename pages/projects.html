@@ -6,9 +6,10 @@ permalink: /pages/projects/
 
 <style>  
 .skill-card {
-    width: 330px;
-    height: 450px;
+    width: 340px;
+    height: 440px;
     position: relative;
+    justify-content: space-between;
 
 }
 
@@ -18,7 +19,7 @@ permalink: /pages/projects/
     max-width: 320px;
     height: 140px;
     width: auto;
-    margin: 30px auto; /* Space around the image */
+    margin: 35px auto; /* Space around the image */
     margin-bottom: 10px;
     border-radius: 2px; /* Optional rounded corners */
 
@@ -40,7 +41,7 @@ permalink: /pages/projects/
 .skill-card .about {
     font-size: 0.9em; /* Slightly smaller font */
     color: #555; /* Subtle text color */
-    margin-top: ;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -93,8 +94,9 @@ permalink: /pages/projects/
             <div class="skills-grid" >
                 <div class="skill-card" data-category="simulation">
                   <a href="/pages/projects/dbd_plasma_reactor" class="card-link">
+                  <!-- <a href="/pages/under_construction" class="card-link"> -->
                     <div class="title">DBD Plasma Reactor</div>
-                    <img src="/assets/images/projects/plasma_reactor/max_plasma_temperature.png" alt="Project Image">
+                    <img src="/assets/images/projects/dbd_plasma_reactor/cover.png" alt="Project Image">
                     <p class="about">CFD analysis with thermal effects on a Dielectric Barrier Discharge plasma reactor designed for sewage sludge decontamination. Utilizing the chtMultiRegionFoam solver in OpenFOAM, the simulation aimed to measure the temperature rise in the sludge caused by plasma discharge, ensuring that decontamination was achieved due to plasma effects rather than elevated temperatures.</p>
                     <div class="skills">
                         <span>OpenFOAM</span>
@@ -105,10 +107,12 @@ permalink: /pages/projects/
                     </div>
                   </a>
                 </div>
+
                 <div class="skill-card" data-category="code">
-                  <a href="/pages/projects/hydrogen_plasma/" class="card-link">
+                  <!-- <a href="/pages/projects/hydrogen_plasma/" class="card-link"> -->
+                  <a href="/pages/under_construction" class="card-link">
                     <div class="title">Two-fluid model for Hydrogen plasma</div>
-                     <img src="/assets/images/projects/hydrogen_plasma/debye_probes.png" alt="Project Image">
+                     <img src="/assets/images/projects/hydrogen_plasma/cover.png" alt="Project Image">
                     <p class="about">Development of a 0-D steady-state model for cold Hydrogen plasma, in the pressure limits of 10-60 Torr. The code solves six balance equations for the six different species participating inm the discharge, and an energy equation for the determination of the gas' temperature. The code has been developed in Fortran 2008, and all the parameters are gained by the freeware BOLSIG+.</p>
                     <div class="skills">
                         <span>Hydrogen plasma</span>
@@ -119,6 +123,101 @@ permalink: /pages/projects/
                     </div>
                   </a>
                 </div>
+
+                <div class="skill-card" data-category="code">
+                  <a href="/pages/projects/VPMFoam/" class="card-link">
+                  <!-- <a href="/pages/under_construction" class="card-link"> -->
+                    <div class="title">VPMFoam</div>
+                     <img src="/assets/images/projects/VPMFoam/cover.png" alt="Project Image">
+                    <p class="about">This extensive project has been a cornerstone of my work during my 4-year Ph.D. journey. It involves the development of a 2D hybrid Eulerian-Lagrangian solver for external aerodynamic simulations. The solver combines the strengths of Eulerian solvers (OpenFOAM) and Lagrangian solvers (VPM) to create an hybrid approach, delivering both efficiency and accuracy in aerodynamic analysis.</p>
+                    <div class="skills">
+                        <span>Python</span>
+                        <span>OpenFOAM</span>
+                        <span>Vortex Particle Methods</span>                     
+                        <span>CUDA</span>
+                        <span>C</span> 
+                        <span>OpenMP</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="skill-card" data-category="simulation">
+                  <a href="/pages/projects/static_stall_hybrid/" class="card-link">
+                  <!-- <a href="/pages/under_construction" class="card-link"> -->
+                    <div class="title">Airfoil Static Stall</div>
+                    <img src="/assets/images/projects/static_stall_hybrid/cover.png" alt="Project Image">
+                    <p class="about">This project involves the aerodynamic analysis of a NACA0012 airfoil under static stall conditions, conducted using the hybrid Eulerian-Lagrangian solver, VPMFoam. The airfoil operates at a Reynolds number (Re) of 1000, with angles of attack ranging from 0 to 30 degrees. The study validates the performance of VPMFoam by comparing its results with published bibliographical data.</p>
+                    <div class="skills">
+                        <span>VPMFoam</span>
+                        <span>OpenFOAM</span>
+                        <span>Aerodynamics</span>
+                        <span>Vortex Particle Method</span>                       
+                        <span>Static Stall</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="skill-card" data-category="simulation">
+                  <a href="/pages/projects/dynamic_stall_hybrid" class="card-link">
+                  <!-- <a href="/pages/under_construction" class="card-link"> -->
+                    <div class="title">Airfoil Dynamic Stall</div>
+                    <img src="/assets/images/projects/dynamic_stall_hybrid/cover.png" alt="Project Image">
+                    <p class="about">This project focuses on the aerodynamic analysis of a NACA0012 airfoil under dynamic stall conditions, performed using the hybrid Eulerian-Lagrangian solver, VPMFoam. Operating at a Reynolds number (Re) of 1000, the airfoil is analyzed across various reduced frequencies and angles of attack ranging from 0 to 30 degrees. The study investigates the hysteresis loop associated with the airfoil's stall behavior.</p>
+                    <div class="skills">
+                        <span>VPMFoam</span>
+                        <span>OpenFOAM</span>
+                        <span>Aerodynamics</span>
+                        <span>Vortex Particle Method</span>                       
+                        <span>Dynamic Stall</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="skill-card" data-category="simulation">
+                  <a href="/pages/projects/magnus_effect" class="card-link">
+                  <!-- <a href="/pages/under_construction" class="card-link"> -->
+                    <div class="title">Magnus Effect</div>
+                    <img src="/assets/images/projects/magnus_effect/cover.png" alt="Project Image">
+                    <p class="about">This project investigates the Magnus effect on a rotating cylinder at a Reynolds number (Re) of 200. Simulations are conducted using the VPMFoam solver, with the cylinder analyzed at various rotation speeds. As a validation case for VPMFoam, the results are benchmarked against simulations performed with OpenFOAM.</p>
+                    <div class="skills">
+                        <span>VPMFoam</span>
+                        <span>OpenFOAM</span>
+                        <span>Aerodynamics</span>
+                        <span>Vortex Particle Method</span>                       
+                        <span>Magnus Effect</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="skill-card" data-category="simulation">
+                  <a href="/pages/projects/multicylinder" class="card-link">
+                  <!-- <a href="/pages/under_construction" class="card-link"> -->
+                    <div class="title">Multicylinder flow</div>
+                    <img src="/assets/images/projects/multicylinder/cover.png" alt="Project Image">
+                    <p class="about">This project examines the fluid flow around a two-cylinder configuration using the VPMFoam solver. Serving as a validation case for the hybrid VPMFoam solver, it assesses the solver's accuracy in simulating multibody problems. The results are benchmarked against data from the literature to ensure reliability and accuracy.</p>
+                    <div class="skills">
+                        <span>VPMFoam</span>
+                        <span>OpenFOAM</span>
+                        <span>Aerodynamics</span>
+                        <span>Vortex Particle Method</span>                       
+                        <span>Magnus Effect</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="skill-card" data-category="other">
+                  <a href="/" class="card-link">
+                    <div class="title">Personal Website</div>
+                    <img src="/assets/images/projects/personal_website/cover.png" alt="Project Image">
+                    <p class="about">This project is the very website you are visiting! It marks my first foray into web development, starting with a personal website—arguably the most common choice for a beginner. The site was built using HTML, CSS, and a touch of JavaScript, and is hosted on GitHub Pages.</p>
+                    <div class="skills">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                  </a>
+                </div>
+
             </div>
         </div>
     </div>
